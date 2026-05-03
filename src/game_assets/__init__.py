@@ -1,8 +1,8 @@
 from .ability import Ability, AbilityDeterminationType, SkillProficiencyRanking, Skill, skill_check
 from .alignment import Alignment, KarmicState, STARTING_ALIGNMENT_COORDINATES
-from .classes import ClassType
+from .classes import ClassType, CreatureClass
 from .combat import Combatant, CombatQueue
-from .creature import Creature, CreatureClass, CreatureType, CreatureSize, CreatureConditions, CreatureSentiment, CreatureAttitude, CreatureMetadata
+from .creature import Creature, CreatureType, CreatureSize, CreatureSentiment, CreatureCondition, CreatureAttitude, CreatureMetadata
 from .dice import DieType, DiceRoll, D20Modifier
 from .gametime import TimeOfDay, DayOfWeek, Month, FestivalDay, FestivalWeek, FESTIVAL_MONTHS, POST_FESTIVAL_MONTHS, GameTime
 from .items import CoinValue, MagicalItemRarity, ArmorType, ArmorSlot, MasteryProperty, WeaponType, WeaponProperties, AmmoType, Weapon, Armour, AdventuringTool
@@ -19,14 +19,15 @@ __all__ = [
     "Alignment",
     "KarmicState",
     "STARTING_ALIGNMENT_COORDINATES",
-    "CreatureClass",
+    "ClassType",
     "Combatant",
     "CombatQueue",
     "Creature",
     "ClassType",
+    "CreatureClass",
     "CreatureType",
     "CreatureSize",
-    "CreatureConditions",
+    "CreatureCondition",
     "CreatureSentiment",
     "CreatureAttitude",
     "CreatureMetadata",

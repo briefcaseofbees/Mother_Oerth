@@ -132,33 +132,6 @@ def skill_check(modifiers:list = None,
 
 
 
-class GamingSetType(enum.Enum):
-    dice                = {"label": "Dice"}
-    dragonchess         = {"label": "Dragonchess"}
-    playing_cards       = {"label": "Playing Cards"}
-    threedragon_ante    = {"label": "Three-Dragon Ante"}
-
-    @property
-    def label(self):
-        return self.value["label"]
-
-
-class MusicalInstrumentType(enum.Enum):
-    bagpipes        = {"label": "Bagpipes"}
-    drum            = {"label": "Drum"}
-    dulcimer        = {"label": "Dulcimer"}
-    flute           = {"label": "Flute"}
-    horn            = {"label": "Horn"}
-    lute            = {"label": "Lute"}
-    lyre            = {"label": "Lyre"}
-    pan_flute       = {"label": "Pan Flute"}
-    shawm           = {"label": "Shawm"}
-    viol            = {"label": "Viol"}
-
-    @property
-    def label(self):
-        return self.value["label"]
-
 
 class Language(enum.Enum):
     common          = {"label": "Common",       "rarity": "standard"}

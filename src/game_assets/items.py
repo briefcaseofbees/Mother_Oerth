@@ -8,113 +8,130 @@ from .combat import DamageType
 
 
 class CoinValue(enum.Enum):  # all in copper coin values
-    cp = 1
-    sp = 10
-    ep = 50
-    gp = 100
-    pp = 1000
+    cp = {"label": "Copper Piece(s)",       "value": 1}
+    sp = {"label": "Silver Pieces(s)",      "value": 10}
+    ep = {"label": "Electrum Piece(s)",     "value": 50}
+    gp = {"label": "Gold Piece(s)",         "value": 100}
+    pp = {"label": "Platinum Piece(s)",     "value": 1000}
 
     @classmethod
     def parse(cls, cost_string):
         amount, denomination = cost_string.split(" ")
-        return int(amount) * cls[denomination.lower()].value
+        return int(amount) * cls[denomination.lower()].value["value"]
 
     @classmethod
     def to_coins(cls, copper_total):
         result = {}
         remaining = copper_total
-        for coin in sorted(cls, key=lambda x: x.value, reverse=True):
-            if remaining >= coin.value:
-                result[coin.name] = remaining // coin.value
-                remaining %= coin.value
+        for coin in sorted(cls, key=lambda x: x.value["value"], reverse=True):
+            if remaining >= coin.value["value"]:
+                result[coin.name] = remaining // coin.value["value"]
+                remaining %= coin.value["value"]
 
         return result
 
 
 class MagicalItemRarity(enum.Enum):
-    mundane = -1    # non-magical items
-    common = 0      # basic magical items
-    uncommon = 1    # items with moderate magical effects
-    rare = 2        # powerful items with significant effects
-    very_rare = 3   # exceptional items with strong magical abilities
-    legendary = 4   # unique items with extraordinary powers
-    artifact = 5    # singular, world altering items with immense power
+    mundane         = {"label": "Mundane"}
+    common          = {"label": "Common"}
+    uncommon        = {"label": "Uncommon"}
+    rare            = {"label": "Rare"}
+    very_rare       = {"label": "Very Rare"}
+    legendary       = {"label": "Legendary"}
+    artifact        = {"label": "Artifact"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class ArmorType(enum.Enum):
-    clothing = -1  # non-armor type
-    light = 0
-    medium = 1
-    heavy = 2
-    shield = 3
+    clothing    = {"label": "Clothing"}
+    light       = {"label": "Light"}
+    medium      = {"label": "Medium"}
+    heavy       = {"label": "Heavy"}
+    shield      = {"label": "Shield"}
 
 
 class ArmorSlot(enum.Enum):  # the slots that (specifically) equipped items can occupy
-    # generally following the BG3 conventions, but adding additional slots as per the SRD
+    headwear                = {"label": "Headwear"}
+    eyes                    = {"label": "Eyes"}
+    mantle                  = {"label": "Mantle"}
+    musical_instrument      = {"label": "Musical Instrument"}
+    amulet                  = {"label": "Amulet"}
+    armor                   = {"label": "Armor"}
+    clothing                = {"label": "Clothing"}
+    cloak                   = {"label": "Cloak"}
+    wrists                  = {"label": "Wrists"}
+    handwear                = {"label": "Handwear"}
+    ring                    = {"label": "Ring"}
+    shield                  = {"label": "Shield"}
+    main_hand               = {"label": "Main Hand"}
+    off_hand                = {"label": "Off Hand"}
+    light_source            = {"label": "Light Source"}
+    footwear                = {"label": "Footwear"}
 
-    # TODO: will likely need to go through all items/weapons/armor/etc. and add the necessary tags
-
-    headwear = 0
-    armor = 1
-    cloak = 2
-    amulet = 3
-    ring = 4  # two rings, as with the BG3 system
-    shield = 5
-    main_hand = 6  # bear in mind that some equipment has the versatile property, will need to account for that
-    musical_instrument = 7
-    light_source = 8
-    handwear = 9
-    footwear = 10
-    clothing = 11
-    eyes = 12
-    wrists = 13
-    mantle = 14
-    off_hand = 15
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class MasteryProperty(enum.Enum):
-    cleave = 0
-    graze = 1
-    nick = 2
-    push = 3
-    sap = 4
-    slow = 5
-    topple = 6
-    vex = 7
+    cleave      = {"label": "Cleave"}
+    graze       = {"label": "Graze"}
+    nick        = {"label": "Nick"}
+    push        = {"label": "Push"}
+    sap         = {"label": "Sap"}
+    slow        = {"label": "Slow"}
+    topple      = {"label": "Topple"}
+    vex         = {"label": "Vex"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class WeaponType(enum.Enum):
-    simple = 0
-    martial = 1
-    exotic = 2
-    melee = 3
-    ranged = 4
+    simple      = {"label": "Simple"}
+    martial     = {"label": "Martial"}
+    exotic      = {"label": "Exotic"}
+    melee       = {"label": "Melee"}
+    ranged      = {"label": "Ranged"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class WeaponProperties(enum.Enum):
-    ammunition = 0
-    finesse = 1
-    heavy = 2
-    light = 3
-    loading = 4
-    range = 5
-    reach = 6
-    thrown = 7
-    two_handed = 8
-    versatile = 9
-    special = 10
-    silvered = 11
+    ammunition      = {"label": "Ammunition"}
+    finesse         = {"label": "Finesse"}
+    heavy           = {"label": "Heavy"}
+    light           = {"label": "Light"}
+    loading         = {"label": "Loading"}
+    range           = {"label": "Range"}
+    reach           = {"label": "Reach"}
+    thrown          = {"label": "Thrown"}
+    two_handed      = {"label": "Two-handed"}
+    versatile       = {"label": "Versatile"}
+    special         = {"label": "Special"}
+    silvered        = {"label": "Silvered"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class AmmoType(enum.Enum):
-    arrow = 0
-    bolt = 1
-    bullet_sling = 2
-    bullet_firearm = 3
-    needle = 4
+    arrow           = {"label": "Arrow"}
+    bolt            = {"label": "Bolt"}
+    bullet_sling    = {"label": "Bullet (Sling)"}
+    bullet_firearm  = {"label": "Bullet (Firearm)"}
+    needle          = {"label": "Needle"}
 
-
-# TODO: need to deal with magical weapons and armour... how? unsure yet
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class Weapon:
@@ -187,19 +204,6 @@ class Weapon:
                     self.ammo_type = AmmoType[prop_str[2].strip("()")]  # pull ammo type from third item in property
 
 
-"""# DEBUGGING THE WEAPON CLASS
-weapon_json_file = json.load(open("resources/weapons.json"))
-
-weapon_collection = []
-
-for item in weapon_json_file:
-    weapon_collection.append(Weapon(item))
-
-for weapon in weapon_collection:
-    if weapon.dmg["two_handed"]:
-        print(f"{weapon.name} did {weapon.dmg['two_handed'].roll()} damage!")"""
-
-
 class Armour:
     def __init__(self, armor_dict:dict):
         self.name = None
@@ -226,19 +230,6 @@ class Armour:
         self.cost = CoinValue.parse(armor_dict["cost"])
 
 
-"""# DEBUGGING THE ARMOUR CLASS
-armor_json_file = json.load(open("armours.json"))
-
-armour_collection = []
-
-for item in armor_json_file:
-    armour_collection.append(Armour(item))
-
-for armour in armour_collection:
-    print(armour.__dict__)
-"""
-
-
 class AdventuringTool:
     def __init__(self):
         self.item_id = None
@@ -254,6 +245,7 @@ class AdventuringTool:
 
     def extract_data(self, adventuring_tool_dict:dict):
         pass
+
 
 class ToolProficiency(enum.Enum):
     alchemist_supplies          = {"label": "Alchemist Supplies"}
@@ -281,6 +273,34 @@ class ToolProficiency(enum.Enum):
     navigator_tools             = {"label": "Navigator Tools"}
     poisoner_kit                = {"label": "Poisoner Kit"}
     thief_tools                 = {"label": "Thief Tools"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+class GamingSetType(enum.Enum):
+    dice                = {"label": "Dice"}
+    dragonchess         = {"label": "Dragonchess"}
+    playing_cards       = {"label": "Playing Cards"}
+    threedragon_ante    = {"label": "Three-Dragon Ante"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+class MusicalInstrumentType(enum.Enum):
+    bagpipes        = {"label": "Bagpipes"}
+    drum            = {"label": "Drum"}
+    dulcimer        = {"label": "Dulcimer"}
+    flute           = {"label": "Flute"}
+    horn            = {"label": "Horn"}
+    lute            = {"label": "Lute"}
+    lyre            = {"label": "Lyre"}
+    pan_flute       = {"label": "Pan Flute"}
+    shawm           = {"label": "Shawm"}
+    viol            = {"label": "Viol"}
 
     @property
     def label(self):
