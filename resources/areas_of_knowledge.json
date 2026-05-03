@@ -1,0 +1,65 @@
+[
+  {
+    "name": "arcana",
+    "areas": [
+      "spell",
+      "magic item",
+      "eldritch symbol",
+      "magical tradition",
+      "plane of existence",
+      {"creatures": [
+        "aberration",
+        "construct",
+        "elemental",
+        "fey",
+        "monstrosity"
+      ]}
+    ]},
+  {
+    "name": "history",
+    "areas": [
+      "historic event",
+      "historic person",
+      "ancient civilization",
+      "war",
+      {"creatures": [
+        "giant",
+        "humanoid"
+      ]}
+    ]},
+  {
+    "name": "investigation",
+    "areas": [
+      "trap",
+      "cipher",
+      "riddle",
+      "gadget"
+    ]},
+  {
+    "name": "nature",
+    "areas": [
+      "terrain",
+      "flora",
+      "weather",
+      {"creatures": [
+        "beast",
+        "dragon",
+        "ooze",
+        "plant"
+      ]}
+    ]},
+  {
+    "name": "religion",
+    "areas": [
+      "deity",
+      "religious hierarchy",
+      "religious rite",
+      "holy symbol",
+      "cult",
+      {"creatures": [
+        "celestial",
+        "fiend",
+        "undead"
+      ]}
+    ]}
+]

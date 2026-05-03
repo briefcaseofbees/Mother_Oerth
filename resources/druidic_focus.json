@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Sprig of mistletoe",
+    "type": "druidic_focus",
+    "weight": 0,
+    "desc": "",
+    "cost": "1 GP"
+  },
+  {
+    "name": "Staff (Wood)",
+    "type": "druidic_focus",
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Quarterstaff (Wood)",
+    "type": "druidic_focus",
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Yew Wand",
+    "type": "druidic_focus",
+    "weight": 1,
+    "desc": "",
+    "cost": "10 GP"
+  }
+]

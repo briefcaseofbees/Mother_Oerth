@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Amulet",
+    "type": "holy_symbol",
+    "weight": 1,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Emblem",
+    "type": "holy_symbol",
+    "weight": 0,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Reliquary",
+    "type": "holy_symbol",
+    "weight": 2,
+    "desc": "",
+    "cost": "5 GP"
+  }
+]

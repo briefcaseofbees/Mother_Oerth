@@ -1,0 +1,44 @@
+[
+  {
+      "name": "Strength",
+      "type": "str",
+      "desc": "Physical Might.",
+      "checks": "Lift, push, pull, or break something.",
+      "saves": "Physically resist direct force."
+  },
+  {
+      "name": "Dexterity",
+      "type": "dex",
+      "desc": "Agility, reflexes, and balance.",
+      "checks": "Move nimbly, quickly, or quietly.",
+      "saves": "Dodge out of harms way."
+  },
+  {
+      "name": "Constitution",
+      "type": "con",
+      "desc": "Health and stamina.",
+      "checks": "Push your body past normal limits.",
+      "saves": "Endure a toxic hazard."
+  },
+  {
+      "name": "Intelligence",
+      "type": "int",
+      "desc": "Reasoning and memory.",
+      "checks": "Reason or remember.",
+      "saves": "Recognize an illusion as a fake."
+  },
+  {
+      "name": "Wisdom",
+      "type": "wis",
+      "desc": "Perceptiveness and mental fortitude.",
+      "checks": "Notice things in the environment or in creatures' behaviour.",
+      "saves": "Resist a mental assault."
+  },
+  {
+      "name": "Charisma",
+      "type": "cha",
+      "desc": "Confidence, poise, and charm.",
+      "checks": "Influence, entertain, or deceive.",
+      "saves": "Assert your identity."
+  }
+]

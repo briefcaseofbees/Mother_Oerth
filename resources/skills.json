@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Acrobatics",
+    "stat": "DEX",
+    "desc": "Stay on your feet in a tricky situation, or perform an acrobatic stunt."
+  },
+  {
+    "name": "Animal Handling",
+    "stat": "WIS",
+    "desc": "Calm or train an animal, or get an animal to behave in a certain way."
+  },
+  {
+    "name": "Arcana",
+    "stat": "INT",
+    "desc": "Recall lore about spells, magic items, and the planes of existence."
+  },
+  {
+    "name": "Athletics",
+    "stat": "STR",
+    "desc": "Jump farther than normal, stay afloat in rough water, or break something."
+  },
+  {
+    "name": "Deception",
+    "stat": "CHA",
+    "desc": "Tell a convincing lie, or wear a disguise convincingly."
+  },
+  {
+    "name": "History",
+    "stat": "INT",
+    "desc": "Recall lore about historical events, people, nations, and cultures"
+  },
+  {
+    "name": "Insight",
+    "stat": "WIS",
+    "desc": "Discern a person’s mood and intentions."
+  },
+  {
+    "name": "Intimidation",
+    "stat": "CHA",
+    "desc": "Awe or threaten someone into doing what you want."
+  },
+  {
+    "name": "Investigation",
+    "stat": "INT",
+    "desc": "Find obscure information in books, or deduce how something works. "
+  },
+  {
+    "name": "Medicine",
+    "stat": "WIS",
+    "desc": "Diagnose an illness, or determine what killed the recently slain."
+  },
+  {
+    "name": "Nature",
+    "stat": "INT",
+    "desc": "Recall lore about terrain, plants, animals, and weather."
+  },
+  {
+    "name": "Perception",
+    "stat": "WIS",
+    "desc": "Using a combination of senses, notice something that’s easy to miss."
+  },
+  {
+    "name": "Performance",
+    "stat": "CHA",
+    "desc": "Act, tell a story, perform music, or dance."
+  },
+  {
+    "name": "Persuasion",
+    "stat": "CHA",
+    "desc": "Honestly and graciously convince someone of something."
+  },
+  {
+    "name": "Religion",
+    "stat": "INT",
+    "desc": "Recall lore about gods, religious rituals, and holy symbols."
+  },
+  {
+    "name": "Sleight of hand",
+    "stat": "DEX",
+    "desc": "Pick a pocket, conceal a handheld object, or perform legerdemain."
+  },
+  {
+    "name": "Stealth",
+    "stat": "DEX",
+    "desc": "Escape notice by moving quietly and hiding behind things."
+  },
+  {
+    "name": "Survival",
+    "stat": "WIS",
+    "desc": "Follow tracks, forage, find a trail, or avoid natural hazards. "
+  }
+]

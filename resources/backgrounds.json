@@ -1,0 +1,70 @@
+[
+  {
+    "name": "Acolyte",
+    "abilities": ["INT", "WIS", "CHA"],
+    "desc": "",
+    "feat": "Magic Initiate (Cleric)",
+    "skills": ["Insight", "Religion"],
+    "tool_prof": "Calligrapher's Supplies",
+    "equipment":
+      [
+        { "name": "A",
+          "items": ["Calligrapher's Supplies", "Book (prayers)", "Holy Symbol", "Parchment (10)", "Robe", "8 GP"]
+        },
+        { "name": "B",
+          "items": ["50 GP"]
+        }
+      ]
+  },
+  {
+    "name": "Criminal",
+    "abilities": ["DEX", "CON", "INT"],
+    "desc": "",
+    "feat": "Alert",
+    "skills": ["Sleight of Hand", "Stealth"],
+    "tool_prof": "Thieves' Tools",
+    "equipment":
+      [
+        { "name": "A",
+          "items": ["Dagger (2)", "Thieves's Tools", "Crowbar", "Pouch", "Pouch", "Traveler's Clothes", "16 GP"]
+        },
+        { "name": "B",
+          "items": ["50 GP"]
+        }
+      ]
+  },
+  {
+    "name": "Sage",
+    "abilities": ["CON", "INT", "WIS"],
+    "desc": "",
+    "feat": "Magic Initiate (Wizard)",
+    "skills": ["Arcana", "History"],
+    "tool_prof": "Calligrapher's Supplies",
+    "equipment":
+      [
+        { "name": "A",
+          "items": ["Quarterstaff", "Calligrapher's Supplies", "Book (history)", "Parchment (8)", "Robe", "8 GP"]
+        },
+        { "name": "B",
+          "items": ["50 GP"]
+        }
+      ]
+  },
+  {
+    "name": "Soldier",
+    "abilities": ["STR", "DEX", "CON"],
+    "desc": "",
+    "feat": "Savage Attacker",
+    "skills": ["Athletics", "Intimidation"],
+    "tool_prof": "Gaming Set",
+    "equipment":
+      [
+        { "name": "A",
+          "items": ["Spear", "Shortbow", "Arrows (20)", "Gaming Set", "Healer's Kit", "Quiver", "Traveler's Clothes", "14 GP"]
+        },
+        { "name": "B",
+          "items": ["50 GP"]
+        }
+      ]
+  }
+]

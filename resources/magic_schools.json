@@ -1,0 +1,35 @@
+[
+  {
+    "name": "abjuration",
+    "desc": "prevents or reverses harmful effects"
+  },
+  {
+    "name": "conjuration",
+    "desc": "transports creatures or objects"
+  },
+  {
+    "name": "divination",
+    "desc": "reveals information"
+  },
+  {
+    "name": "enchantment",
+    "desc": "influences minds"
+  },
+  {
+    "name": "evocation",
+    "desc": "channels energy to create effects that are often destructive"
+  },
+  {
+    "name": "illusion",
+    "desc": "deceives the mind or senses"
+  },
+  {
+    "name": "necromancy",
+    "desc": "manipulates life and death"
+  },
+  {
+    "name": "transmutation",
+    "desc": "transforms creatures or objects"
+  }
+
+]

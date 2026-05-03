@@ -1,0 +1,92 @@
+[
+  {"__comment": "Spell Descriptions start on page 107 in SRD"},
+  {
+    "name": "Acid Arrow",
+    "level": "second_level",
+    "school": "evocation",
+    "allowed_classes": ["wizard"],
+    "cast_time": "action",
+    "range": ["distance", 90],
+    "components":
+    {
+      "V": true,
+      "S": true,
+      "M": [true, "powdered rhubarb leaf"]
+    },
+    "duration": "instant",
+
+    "desc": "A shimmering green arrow streaks towards a target within range and bursts in a spray of acid.",
+    "effects":
+    {
+      "on_hit":
+      {
+        "now": "acid (4d4)",
+        "next_turn": "acid (2d4)"
+      },
+      "on_miss":
+      {
+        "now": "acid (4d4) (half)"
+      }
+    },
+
+    "higher_level": {
+      "upcast": "(1d4)"
+    }
+  },
+  {
+    "name": "Acid Splash",
+    "level": "cantrip",
+    "school": "evocation",
+    "allowed_classes": ["sorcerer", "wizard"],
+    "cast_time": "action",
+    "range": ["distance", 60],
+    "components":
+    {
+      "V": true,
+      "S": true
+    },
+    "duration": "instant",
+
+    "desc": "You create an acidic bubble at a point within range, where it explodes in a 5ft-radius sphere.",
+    "effects": {
+      "now": "acid (1d6)"
+    },
+
+    "higher_level": {
+      "upgrade": {
+        "level_5": "(2d6)",
+        "level_11": "(3d6)",
+        "level_17": "(4d6)"
+      }
+    }
+  },
+  {
+    "name": "Aid",
+    "level": "second_level",
+    "school": "abjuration",
+    "allowed_classes": ["bard", "cleric", "druid", "paladin", "ranger"],
+    "cast_time": "action",
+    "range": ["distance", 30],
+    "components":
+    {
+      "V": true,
+      "S": true,
+      "M": [true, "a strip of white cloth"]
+    },
+    "duration": "8 hours",
+
+    "desc": "Choose up to three creatures within range. Each target's Hit Point maximum, and current Hit Points increase by 5 for the duration.",
+    "effects":
+    {
+      "on_hit":
+      {
+        "hp_max": "+5",
+        "current_hp": "+5"
+      }
+    },
+
+    "higher_level": {
+      "upcast": "+5/lvl"
+    }
+  }
+]

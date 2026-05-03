@@ -1,0 +1,626 @@
+[
+  {
+    "name": "Acid",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "25 GP",
+    "desc": "A vial of acid that can be thrown.",
+    "effects": []
+  },
+  {
+    "name": "Alchemist's Fire",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Antitoxin",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Backpack",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ball Bearings",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Barrel",
+    "type": "adventuring_gear",
+    "weight": 70,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Basket",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "4 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bedroll",
+    "type": "adventuring_gear",
+    "weight": 7,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bell",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Blanket",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Block and Tackle",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Book",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bottle, Glass",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bucket",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Burglar's Pack",
+    "type": "adventuring_gear",
+    "weight": 42,
+    "cost": "16 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Caltrops",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Candle",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Case, Crossbow Bolt",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Case, (Map/Scroll)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Chain",
+    "type": "adventuring_gear",
+    "weight": 10,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Chest",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Climber's Kit",
+    "type": "adventuring_gear",
+    "weight": 12,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Clothes, Fine",
+    "type": "adventuring_gear",
+    "weight": 6,
+    "cost": "15 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Clothes, Traveler's",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Component Pouch",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Costume",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Crowbar",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Diplomat's Pack",
+    "type": "adventuring_gear",
+    "weight": 39,
+    "cost": "39 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Dungeoneer's Pack",
+    "type": "adventuring_gear",
+    "weight": 55,
+    "cost": "12 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Entertainer's Pack",
+    "type": "adventuring_gear",
+    "weight": 58.5,
+    "cost": "40 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Explorer's Pack",
+    "type": "adventuring_gear",
+    "weight": 55,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Flask",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Grappling Hook",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Healer's Kit",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Holy Water",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Hunting Trap",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ink",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ink Pen",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Jug",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ladder",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lamp",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lantern, Bullseye",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lantern, Hooded",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lock",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Magnifying Glass",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "100 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Manacles",
+    "type": "adventuring_gear",
+    "weight": 6,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Map",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Mirror",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Net",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Oil",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Paper",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Parchment",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Perfume",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Poison, Basic",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "100 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pole",
+    "type": "adventuring_gear",
+    "weight": 7,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pot, Iron",
+    "type": "adventuring_gear",
+    "weight": 10,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Potion of Healing",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pouch",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Priest's Pack",
+    "type": "adventuring_gear",
+    "weight": 29,
+    "cost": "33 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Quiver",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ram, Portable",
+    "type": "adventuring_gear",
+    "weight": 35,
+    "cost": "4 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Rations",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Robe",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Rope",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Sack",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Scholar's Pack",
+    "type": "adventuring_gear",
+    "weight": 22,
+    "cost": "40 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Shovel",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Signal Whistle",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spell Scroll (Cantrip)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "30 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spell Scroll (Level 1)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spikes, Iron",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spyglass",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1000 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "String",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Tent",
+    "type": "adventuring_gear",
+    "weight": 20,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Tinderbox",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Torch",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Vial",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Waterskin",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 SP",
+    "desc": "",
+    "effects": []
+  }
+]

@@ -1,0 +1,72 @@
+[
+  {
+    "name": "Bagpipes",
+    "type": ["musical_instrument", "bagpipes"],
+    "desc": "",
+    "weight": 6,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Drum",
+    "type": ["musical_instrument", "drum"],
+    "desc": "",
+    "weight": 3,
+    "cost": "6 GP"
+  },
+  {
+    "name": "Dulcimer",
+    "type": ["musical_instrument", "dulcimer"],
+    "desc": "",
+    "weight": 10,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Flute",
+    "type": ["musical_instrument", "flute"],
+    "desc": "",
+    "weight": 1,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Horn",
+    "type": ["musical_instrument", "horn"],
+    "desc": "",
+    "weight": 2,
+    "cost": "3 GP"
+  },
+  {
+    "name": "Lute",
+    "type": ["musical_instrument", "lute"],
+    "desc": "",
+    "weight": 2,
+    "cost": "35 GP"
+  },
+  {
+    "name": "Lyre",
+    "type": ["musical_instrument", "lyre"],
+    "desc": "",
+    "weight": 2,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Pan Flute",
+    "type": ["musical_instrument", "pan_flute"],
+    "desc": "",
+    "weight": 2,
+    "cost": "12 GP"
+  },
+  {
+    "name": "Shawm",
+    "type": ["musical_instrument", "shawm"],
+    "desc": "",
+    "weight": 1,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Viol",
+    "type": ["musical_instrument", "viol"],
+    "desc": "",
+    "weight": 1,
+    "cost": "30 GP"
+  }
+]

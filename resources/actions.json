@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Attack",
+    "type": "attack",
+    "desc": "Attack with a weapon or an Unarmed Strike."
+  },
+  {
+    "name": "Dash",
+    "type": "dash",
+    "desc": "For the rest of the turn, give yourself extra movement equal to your Speed."
+  },
+  {
+    "name": "Disengage",
+    "type": "disengage",
+    "desc": "Your movement doesn't provoke Opportunity Attacks for the rest of the turn."
+  },
+  {
+    "name": "Dodge",
+    "type": "dodge",
+    "desc": "Until the start of your next turn, attack rolls against you have Disadvantage, and you make Dexterity saving throws with Advantage. You lose this benefit if you have the Incapacitated condition or if your Speed is 0."
+  },
+  {
+    "name": "Help",
+    "type": "help",
+    "desc": "Help another creature’s ability check or attack roll, or administer first aid"
+  },
+  {
+    "name": "Hide",
+    "type": "hide",
+    "desc": "Make a Dexterity (Stealth) check."
+  },
+  {
+    "name": "Influence",
+    "type": "influence",
+    "desc": "Make a Charisma (Deception, Intimidation, Performance, or Persuasion) or Wisdom (Animal Handling) check to alter a creature’s attitude."
+  },
+  {
+    "name": "Magic",
+    "type": "magic",
+    "desc": "Cast a spell, use a magic item, or use a magical feature."
+  },
+  {
+    "name": "Ready",
+    "type": "ready",
+    "desc": "Prepare to take an action in response to a trigger you define."
+  },
+  {
+    "name": "Search",
+    "type": "search",
+    "desc": "Make a Wisdom (Insight, Medicine, Perception, or Survival) check."
+  },
+  {
+    "name": "Study",
+    "type": "study",
+    "desc": "Make an Intelligence (Arcana, History, Investigation, Nature, or Religion) check. "
+  },
+  {
+    "name": "Utilize",
+    "type": "utilize",
+    "desc": "Use a nonmagical object."
+  }
+]

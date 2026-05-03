@@ -1,0 +1,977 @@
+[
+  {
+    "name": "Ability Score Improvement",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Abjure Foes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Acrobatic Movement",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Action Surge (one use)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Action Surge (two uses)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Additional Fighting Style",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Arcane Apotheosis",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Arcane Recovery",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Archdruid",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Aura Expansion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Aura of Courage",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Aura of Devotion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Aura of Protection",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Barbarian Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Bardic Inspiration",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Beast Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Blessed Healer",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Blessed Strikes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Body and Mind",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Bonus Proficiencies",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Brutal Strike",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Channel Divinity",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Circle of the Land Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Cleric Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Contact Patron",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Countercharm",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Cunning Action",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Cunning Strike",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Cutting Words",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Danger Sense",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Dark One's Blessing",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Dark One's Own Luck",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Defensive Tactics",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Deflect Attacks",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Deflect Energy",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Deft Explorer",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Devious Strikes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Disciple of Life",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Disciplined Survivor",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Divine Intervention",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Divine Order",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Draconic Resilience",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Draconic Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Dragon Companion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Dragon Wings",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Druid Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Druidic",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Eldritch Invocations",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Eldritch Master",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Elemental Affinity",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Elemental Fury",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Elusive",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Empowered Evocation",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Empowered Strikes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Epic Boon",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Evocation Savant",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Expertise",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Extra Attack",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Evasion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Faithful Steed",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fast Hands",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fast Movement",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Favored Enemy",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Feral Instinct",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Feral Senses",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fiend Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fiendish Resilience",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fighter Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fighting Style",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Fleet Step",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Foe Slayer",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Font of Inspiration",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Font of Magic",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Frenzy",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Greater Divine Intervention",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Heightened Focus",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Heroic Warrior",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Holy Nimbus",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Hunter's Lore",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Hunter's Prey",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Hurl Through Hell",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Blessed Strikes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Brutal Strike I",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Brutal Strike II",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Critical",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Cunning Strike",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Improved Elemental Fury",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Indomitable (one use)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Indomitable (two uses)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Indomitable (three uses)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Indomitable Might",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Innate Sorcery",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Instinctive Pounce",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Intimidating Presence",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Jack of All Trades",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Land's Aid",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Lay On Hands",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Life Domain Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Magical Cunning",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Magical Discoveries",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Magical Secrets",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Martial Arts",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Memorize Spell",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Metamagic",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Mindless Rage",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Monk Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Monk's Focus",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Mystic Arcanum (level 6 spell)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Mystic Arcanum (level 7 spell)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Mystic Arcanum (level 8 spell)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Mystic Arcanum (level 9 spell)",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Natural Recovery",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Nature's Ward",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Nature's Sanctuary",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Nature's Veil",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Oath of Devotion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Open Hand Technique",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Overchannel",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Pact Magic",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Paladin Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Paladin's Smite",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Peerless Skill",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Perfect Focus",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Persistent Rage",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Potent Cantrip",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Precise Hunter",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Preserve Life",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Primal Champion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Primal Knowledge",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Primal Order",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Quivering Palm",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Radiant Strikes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Rage",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Ranger Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Reckless Attack",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Relentless Hunter",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Relentless Rage",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Reliable Talent",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Remarkable Athlete",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Restoring Touch",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Retaliation",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Ritual Adept",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Rogue Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Roving",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sacred Weapon",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Scholar",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sculpt Spell",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sear Undead",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Second Wind",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Second-Story Work",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Self-Restoration",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Signature Spells",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Slow Fall",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Slippery Mind",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Smite of Protection",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sneak Attack",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sorcerer Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sorcerous Restoration",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Sorcery Incarnate",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Spellcasting",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Spell Mastery",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Steady Aim",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Stroke of Luck",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Studied Attacks",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Stunning Strike",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Subclass Feature",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Superior Critical",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Superior Defense",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Superior Hunter's Defense",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Superior Hunter's Prey",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Superior Inspiration",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Supreme Healing",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Supreme Sneak",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Survivor",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Tactical Master",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Tactical Mind",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Tactical Shift",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Thief's Reflexes",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Thieves' Cant",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Two Extra Attacks",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Three Extra Attacks",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Tireless",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Unarmored Defence",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Unarmored Movement",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Uncanny Dodge",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Uncanny Metabolism",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Use Magic Device",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Warlock Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Weapon Mastery",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Wholeness of Body",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Wild Companion",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Wild Resurgence",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Wild Shape",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Wizard Subclass",
+    "desc": "",
+    "effects": ""
+  },
+  {
+    "name": "Words of Creation",
+    "desc": "",
+    "effects": ""
+  }
+]
