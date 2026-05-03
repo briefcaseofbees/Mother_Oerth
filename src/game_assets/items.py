@@ -254,3 +254,34 @@ class AdventuringTool:
 
     def extract_data(self, adventuring_tool_dict:dict):
         pass
+
+class ToolProficiency(enum.Enum):
+    alchemist_supplies          = {"label": "Alchemist Supplies"}
+    brewer_supplies             = {"label": "Brewer Supplies"}
+    calligrapher_supplies       = {"label": "Calligrapher Supplies"}
+    carpenter_tools             = {"label": "Carpenter Tools"}
+    cartographer_tools          = {"label": "Cartographer Tools"}
+    cobbler_tools               = {"label": "Cobbler Tools"}
+    cook_utensils               = {"label": "Cook Utensils"}
+    glassblower_tools           = {"label": "Glassblower Tools"}
+    jeweler_tools               = {"label": "Jeweler Tools"}
+    leatherworker_tools         = {"label": "Leatherworker Tools"}
+    mason_tools                 = {"label": "Mason Tools"}
+    painter_supplies            = {"label": "Painter Supplies"}
+    potter_tools                = {"label": "Potter Tools"}
+    smith_tools                 = {"label": "Smith Tools"}
+    tinker_tools                = {"label": "Tinker Tools"}
+    weaver_tools                = {"label": "Weaver Tools"}
+    woodcarver_tools            = {"label": "Woodcarver Tools"}
+    disguise_kit                = {"label": "Disguise Kit"}
+    forgery_kit                 = {"label": "Forgery Kit"}
+    gaming_set                  = {"label": "Gaming Set"}
+    herbalism_kit               = {"label": "Herbalism Kit"}
+    musical_instrument          = {"label": "Musical Instrument"}
+    navigator_tools             = {"label": "Navigator Tools"}
+    poisoner_kit                = {"label": "Poisoner Kit"}
+    thief_tools                 = {"label": "Thief Tools"}
+
+    @property
+    def label(self):
+        return self.value["label"]

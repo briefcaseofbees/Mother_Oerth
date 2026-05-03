@@ -1,5 +1,6 @@
 """
-
+houses code pertaining to the mechanical aspects of creatures-- includes creature-size, creature-conditions,
+creature-classes, creature-metadata, etc.
 """
 
 import enum, math
@@ -47,12 +48,16 @@ class CreatureType(enum.Enum):
 
 
 class CreatureSize(enum.Enum):
-    tiny = 0
-    small = 1
-    medium = 2
-    large = 3
-    huge = 4
-    gargantuan = 5
+    tiny            = {"label": "Tiny"}
+    small           = {"label": "Small"}
+    medium          = {"label": "Medium"}
+    large           = {"label": "Large"}
+    huge            = {"label": "Huge"}
+    gargantuan      = {"label": "Gargantuan"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
     @property
     def hit_dice(self):
@@ -120,52 +125,56 @@ _CREATURE_SIZE_WEIGHT_TABLE = {
     CreatureSize.gargantuan:    [4000, None]    # unbound upper value
 }
 
+_CREATURE_SIZE_CARRY_WEIGHT_TABLE = {
+    # creature size to carry weight (equation: str * values-below)
+    CreatureSize.tiny:          7.5,
+    CreatureSize.small:         15,
+    CreatureSize.medium:        15,
+    CreatureSize.large:         30,
+    CreatureSize.huge:          60,
+    CreatureSize.gargantuan:    120
+}
 
-class CreatureConditions(enum.Enum):
-    blinded = 0
-    charmed = 1
-    deafened = 2
-    frightened = 3
-    grappled = 4
-    incapacitated = 5
-    stunned = 6
-    petrified = 7
-    unconscious = 8
-    restrained = 9
-    invisible = 10
-    paralyzed = 11
-    poisoned = 12
-    prone = 13
-    exhaustion_lvl1 = 14
-    exhaustion_lvl2 = 15
-    exhaustion_lvl3 = 16
-    exhaustion_lvl4 = 17
-    exhaustion_lvl5 = 18
-    exhaustion_lvl6 = 19
+_CREATURE_SIZE_DRAG_LIFT_PUSH_TABLE = {
+    # creature size to capacity to drag, lift, and push (equation: str * values-below) (values are 2x their carry weight)
+    CreatureSize.tiny:          _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.tiny] * 2,
+    CreatureSize.small:         _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.small] * 2,
+    CreatureSize.medium:        _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.medium] * 2,
+    CreatureSize.large:         _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.large] * 2,
+    CreatureSize.huge:          _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.huge] * 2,
+    CreatureSize.gargantuan:    _CREATURE_SIZE_CARRY_WEIGHT_TABLE[CreatureSize.gargantuan] * 2,
+}
 
 
-class CreatureClass:
-    def __init__(self):
-        self.name = None
-        self.hit_dice = None
-        self.hit_dice_pool_qty = None
-        self.proficiency_bonus = None
-        self.armor_proficiencies = None
-        self.weapon_proficiencies = None
-        self.starting_tools = None
-        self.saving_throws = None
-        self.starting_skills = None
-        self.class_features = {
-            "1st Level": ["where features would go-- since there's no repetition, it doesn't make sense to have ids"]
-        }
-        self.subclass = None
+class CreatureCondition(enum.Enum):
+    blinded             = {"label": "Blinded"}
+    charmed             = {"label": "Charmed"}
+    deafened            = {"label": "Deafened"}
+    frightened          = {"label": "Frightened"}
+    grappled            = {"label": "Grappled"}
+    incapacitated       = {"label": "Incapacitated"}
+    stunned             = {"label": "Stunned"}
+    petrified           = {"label": "Petrified"}
+    unconscious         = {"label": "Unconscious"}
+    restrained          = {"label": "Restrained"}
+    invisible           = {"label": "Invisible"}
+    paralyzed           = {"label": "Paralyzed"}
+    poisoned            = {"label": "Poisoned"}
+    prone               = {"label": "Prone"}
+    # TODO: look at how the exhaustion mechanic works, find out how to put it to code (every 24 hours that a player does not long rest there is a DC check)
+    exhaustion_lvl1     = {"label": "Somewhat Exhausted"}
+    exhaustion_lvl2     = {"label": "Exhausted"}
+    exhaustion_lvl3     = {"label": "Very Exhausted"}
+    exhaustion_lvl4     = {"label": "Very-Very Exhausted"}
+    exhaustion_lvl5     = {"label": "Extremely Exhausted"}
+    exhaustion_lvl6     = {"label": "Deadly Exhausted"}
 
-        # Spellcaster-specific
-        self.spell_save_DC = None  # if applicable
-        self.spells_known = []
-        self.prepared_spells = []   # subset of known spells
-        self.spellcasting_ability = None
-        self.concentrating = False  # whether class is concentrating on a spell currently
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+
 
 
 class CreatureMetadata:

@@ -6,10 +6,11 @@
   {
     "name": "barbarian",
     "desc": "For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
-    "saving_throw_prof": "str, con",
-    "skill_prof": ["animal_handling", "athletics", "nature", "perception", "survival"],
-    "weapon_prof": ["simple", "martial"],
-    "armor_prof": ["light", "medium", "shield"],
+    "saving_throw_profs": ["str, con"],
+    "skill_profs": ["animal_handling", "athletics", "nature", "perception", "survival"],
+    "weapon_profs": ["simple", "martial"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": [],
     "starting_equip": [["Greataxe", "Handaxe (4)", "Explorer's Pack", "15 GP"],["75 GP"]],
     "spell_casting_ability": null,
     "features": [

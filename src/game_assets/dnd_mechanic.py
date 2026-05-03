@@ -6,6 +6,7 @@ import enum
 
 
 class Action(enum.Enum):
+    # all of these cost ActionEconomy.action
     attack          = {"label": "Attack"}      # attack with a weapon, or unarmed strike
     dash            = {"label": "Dash"}        # doubles movement speed
     disengage       = {"label": "Disengage"}   # prevents opportunity attacks
@@ -25,46 +26,104 @@ class Action(enum.Enum):
 
 
 class TravelPace(enum.Enum):
-    # TODO: make into a dictionary so that the extra information can be stored in the enum
+    slow    = {
+                "label": "Slow",
+                "per_min": 200,
+                "per_hour": 10560,
+                "per_day": 95040,
+                "effect": "advantage(perception, survival)"
+                }
 
-    # pace = pace_id    # distance travelled = {/minute, /hour, /day}
-    slow = -1           # 200ft, 2miles, 18miles (adv on WIS (perception/survival))
-    normal = 0          # 300ft, 3miles, 24miles (dis-adv on DEX (stealth))
-    fast = 1            # 400ft, 4miles, 30miles (dis-adv on WIS & DEX (perception/survival/stealth))
+    normal  = {
+                "label": "Normal",
+                "per_min": 300,
+                "per_hour": 15840,
+                "per_day": 126720,
+                "effect": "disadvantage(stealth)"
+                }
+
+    fast    = {
+                "label": "Fast",
+                "per_min": 400,
+                "per_hour": 21120,
+                "per_day": 158400,
+                "effect": "disadvantage(perception, survival, stealth)"
+                }
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+    @property
+    def per_min(self):
+        return self.value["per_min"]
+
+    @property
+    def per_hour(self):
+        return self.value["per_hour"]
+
+    @property
+    def per_day(self):
+        return self.value["per_day"]
+
+    @property
+    def effect(self):
+        return self.value["effect"]
 
 
 class Hazard(enum.Enum):
-    burning = 0
-    falling = 1
-    suffocation = 2
-    dehydration = 3
-    malnutrition = 4
+    burning         = {"label": "Burning"}
+    falling         = {"label": "Falling"}
+    suffocation     = {"label": "Suffocation"}
+    dehydration     = {"label": "Dehydration"}
+    malnutrition    = {"label": "Malnutrition"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class Reputation(enum.Enum):
-    # ... continues into negative territory
-    wary = -1       # known slightly for bad
-    unknown = 0     # stranger
-    favorable = 1
-    # ... continues into positive territory
+    # reputation score ranges per faction
+    feared          = {"label": "Feared",       "score_range": [-100, -90]}
+    blacklisted     = {"label": "Blacklisted",  "score_range": [-90, -70]}
+    reviled         = {"label": "Reviled",      "score_range": [-70, -40]}
+    untrusted       = {"label": "Untrusted",    "score_range": [-40, -10]}
+    neutral         = {"label": "Neutral",      "score_range": [-10, 10]}
+    trusted         = {"label": "Trusted",      "score_range": [10, 40]}
+    respected       = {"label": "Respected",    "score_range": [40, 70]}
+    honored         = {"label": "Honored",      "score_range": [70, 90]}
+    exalted         = {"label": "Exalted",      "score_range": [90, 100]}
 
 
 class EncumbranceStatus(enum.Enum):
-    unencumbrance               = enum.auto()
-    encumbered                  = enum.auto()
-    heavily_encumbered          = enum.auto()
-    very_heavily_encumbered     = enum.auto()
+    unencumbered                = {"label": "Unencumbered"}
+    encumbered                  = {"label": "Encumbered"}
+    heavily_encumbered          = {"label": "Heavily Encumbered"}
+    very_heavily_encumbered     = {"label": "Very Heavily Encumbered"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class DamageResistLevel(enum.Enum):
-    vulnerable      = enum.auto()
-    no_resistance   = enum.auto()
-    resistance      = enum.auto()
-    immune          = enum.auto()
+    vulnerable      = {"label": "Vulnerable"}
+    no_resistance   = {"label": "No Resistance"}
+    resistance      = {"label": "Resistance"}
+    immune          = {"label": "Immune"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class ActionEconomy(enum.Enum):
-    action              = enum.auto()
-    bonus_action        = enum.auto()
-    reaction            = enum.auto()
-    legendary_action    = enum.auto()
+    action              = {"label": "Action"}
+    bonus_action        = {"label": "Bonus Action"}
+    reaction            = {"label": "Reaction"}
+    legendary_action    = {"label": "Legendary Action"}
+
+    @property
+    def label(self):
+        return self.value["label"]

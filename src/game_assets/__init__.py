@@ -1,6 +1,6 @@
 from .ability import Ability, AbilityDeterminationType, SkillProficiencyRanking, Skill, skill_check
 from .alignment import Alignment, KarmicState, STARTING_ALIGNMENT_COORDINATES
-from .classes import CreatureClass
+from .classes import ClassType
 from .combat import Combatant, CombatQueue
 from .creature import Creature, CreatureClass, CreatureType, CreatureSize, CreatureConditions, CreatureSentiment, CreatureAttitude, CreatureMetadata
 from .dice import DieType, DiceRoll, D20Modifier
@@ -23,7 +23,7 @@ __all__ = [
     "Combatant",
     "CombatQueue",
     "Creature",
-    "CreatureClass",
+    "ClassType",
     "CreatureType",
     "CreatureSize",
     "CreatureConditions",
