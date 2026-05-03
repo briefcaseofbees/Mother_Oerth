@@ -204,7 +204,7 @@ class Weapon:
                     self.ammo_type = AmmoType[prop_str[2].strip("()")]  # pull ammo type from third item in property
 
 
-class Armour:
+class Armor:
     def __init__(self, armor_dict:dict):
         self.name = None
         self.type = None

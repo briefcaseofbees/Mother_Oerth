@@ -5,7 +5,7 @@ from .combat import Combatant, CombatQueue
 from .creature import Creature, CreatureType, CreatureSize, CreatureSentiment, CreatureCondition, CreatureAttitude, CreatureMetadata
 from .dice import DieType, DiceRoll, D20Modifier
 from .gametime import TimeOfDay, DayOfWeek, Month, FestivalDay, FestivalWeek, FESTIVAL_MONTHS, POST_FESTIVAL_MONTHS, GameTime
-from .items import CoinValue, MagicalItemRarity, ArmorType, ArmorSlot, MasteryProperty, WeaponType, WeaponProperties, AmmoType, Weapon, Armour, AdventuringTool
+from .items import CoinValue, MagicalItemRarity, ArmorType, ArmorSlot, MasteryProperty, WeaponType, WeaponProperties, AmmoType, Weapon, Armor, AdventuringTool
 from .map import Map, MapSquare
 from .optional_ruleset import NonPCDeathSavingThrows, MaterialEnforcement, ItemWeightEnforcement, EncumbranceEnforcement, MultiClassAllowance, EquipTimeEnforcement
 from .progression import _CR_XP_TABLE
@@ -51,7 +51,7 @@ __all__ = [
     "WeaponProperties",
     "AmmoType",
     "Weapon",
-    "Armour",
+    "Armor",
     "AdventuringTool",
     "Map",
     "MapSquare",
