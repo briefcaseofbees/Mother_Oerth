@@ -1,3 +1,7 @@
+"""
+
+"""
+
 import enum, math, random
 from .optional_ruleset import D20ModifierStacking, _STACK_MODIFIER_CAP
 

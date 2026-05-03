@@ -1,3 +1,7 @@
+"""
+
+"""
+
 import enum
 from .dice import DiceRoll, DieType
 from .combat import DamageType

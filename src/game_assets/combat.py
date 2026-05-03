@@ -1,3 +1,7 @@
+"""
+
+"""
+
 import enum
 from .creature import Creature
 from .dice import DieType
@@ -120,3 +124,7 @@ class CombatBehaviour(enum.Enum):
     # intelligence of enemies
 
     # dynamic emergence of behavioural tree based on the above factors
+
+def is_encounter_balanced(allies:list[Creature], opponents:list[Creature]) -> bool:
+    # in DND-- encounters are typically balanced via comparison of opponent challenge rating, and party level
+    return sum([]) >= sum([])

@@ -1,3 +1,7 @@
+"""
+
+"""
+
 import enum
 
 _STACK_MODIFIER_CAP = 3  # maximum modifier on stacked advantage/disadvantage D20Modifiers

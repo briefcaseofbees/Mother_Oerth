@@ -1,12 +1,16 @@
+"""
+code pertaining to abilities, skills, and proficiencies
+"""
+
 import enum
 from .dice import DieType, D20Modifier, DifficultyClass
 from .progression import LevelAdvancement
 
 
 class AbilityDeterminationType(enum.Enum):
-    random = 1
-    standard = 2
-    manual = 3
+    random      = enum.auto()
+    standard    = enum.auto()
+    manual      = enum.auto()
 
 
 class Ability(enum.Enum):
@@ -123,3 +127,104 @@ def skill_check(modifiers:list = None,
             f"PASSED on DC {f"{dc.label}, ({dc.number})"}" if roll_result >= dc.number
             else f"FAILED on DC {f"{dc.label}, ({dc.number})"}",
             f"roll history = {roll_history}")
+
+
+class ToolProficiency(enum.Enum):
+    alchemist_supplies          = {"label": "Alchemist Supplies"}
+    brewer_supplies             = {"label": "Brewer Supplies"}
+    calligrapher_supplies       = {"label": "Calligrapher Supplies"}
+    carpenter_tools             = {"label": "Carpenter Tools"}
+    cartographer_tools          = {"label": "Cartographer Tools"}
+    cobbler_tools               = {"label": "Cobbler Tools"}
+    cook_utensils               = {"label": "Cook Utensils"}
+    glassblower_tools           = {"label": "Glassblower Tools"}
+    jeweler_tools               = {"label": "Jeweler Tools"}
+    leatherworker_tools         = {"label": "Leatherworker Tools"}
+    mason_tools                 = {"label": "Mason Tools"}
+    painter_supplies            = {"label": "Painter Supplies"}
+    potter_tools                = {"label": "Potter Tools"}
+    smith_tools                 = {"label": "Smith Tools"}
+    tinker_tools                = {"label": "Tinker Tools"}
+    weaver_tools                = {"label": "Weaver Tools"}
+    woodcarver_tools            = {"label": "Woodcarver Tools"}
+    disguise_kit                = {"label": "Disguise Kit"}
+    forgery_kit                 = {"label": "Forgery Kit"}
+    gaming_set                  = {"label": "Gaming Set"}
+    herbalism_kit               = {"label": "Herbalism Kit"}
+    musical_instrument          = {"label": "Musical Instrument"}
+    navigator_tools             = {"label": "Navigator Tools"}
+    poisoner_kit                = {"label": "Poisoner Kit"}
+    thief_tools                 = {"label": "Thief Tools"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+class GamingSetType(enum.Enum):
+    dice                = {"label": "Dice"}
+    dragonchess         = {"label": "Dragonchess"}
+    playing_cards       = {"label": "Playing Cards"}
+    threedragon_ante    = {"label": "Three-Dragon Ante"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+class MusicalInstrumentType(enum.Enum):
+    bagpipes        = {"label": "Bagpipes"}
+    drum            = {"label": "Drum"}
+    dulcimer        = {"label": "Dulcimer"}
+    flute           = {"label": "Flute"}
+    horn            = {"label": "Horn"}
+    lute            = {"label": "Lute"}
+    lyre            = {"label": "Lyre"}
+    pan_flute       = {"label": "Pan Flute"}
+    shawm           = {"label": "Shawm"}
+    viol            = {"label": "Viol"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+
+class Language(enum.Enum):
+    common          = {"label": "Common",       "rarity": "standard"}
+    draconic        = {"label": "Draconic",     "rarity": "standard"}
+    dwarvish        = {"label": "Dwarvish",     "rarity": "standard"}
+    elvish          = {"label": "Elvish",       "rarity": "standard"}
+    giant           = {"label": "Giant",        "rarity": "standard"}
+    gnomish         = {"label": "Gnomish",      "rarity": "standard"}
+    goblin          = {"label": "Goblin",       "rarity": "standard"}
+    halfling        = {"label": "Halfling",     "rarity": "standard"}
+    orc             = {"label": "Orc",          "rarity": "standard"}
+    abyssal         = {"label": "Abyssal",          "rarity": "rare"}
+    celestial       = {"label": "Celestial",        "rarity": "rare"}
+    deep_speech     = {"label": "Deep Speech",      "rarity": "rare"}
+    druidic         = {"label": "Druidic",          "rarity": "rare"}
+    infernal        = {"label": "Infernal",         "rarity": "rare"}
+    primordial      = {"label": "Primordial",       "rarity": "rare"}
+    sylvan          = {"label": "Sylvan",           "rarity": "rare"}
+    thieves_cant    = {"label": "Thieves Cant",     "rarity": "rare"}
+    undercommon     = {"label": "Undercommon",      "rarity": "rare"}
+
+    @property
+    def label(self):
+        return self.value["label"]
+
+    @property
+    def rarity(self):
+        return self.value["rarity"]
+
+    @classmethod
+    def by_rarity(cls, rarity):
+        return [lang for lang in cls if lang.rarity == rarity]
+
+
+class SpecialSense(enum.Enum):
+    normal = -1  # no special senses
+    blind_sight = 0
+    dark_vision = 1
+    tremor_sense = 2
+    true_sight = 3

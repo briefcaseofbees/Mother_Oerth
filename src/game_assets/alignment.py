@@ -1,3 +1,7 @@
+"""
+code pertaining to alignment, karma, reputation, etc.
+"""
+
 import enum
 
 
