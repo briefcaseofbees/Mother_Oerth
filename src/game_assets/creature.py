@@ -1,4 +1,6 @@
 import enum, math
+import json
+
 from .ability import Ability, Skill
 from .alignment import Alignment
 from .dice import DieType
@@ -178,7 +180,7 @@ class CreatureMetadata:
 
 class Creature:
 
-    def __init__(self, creature_dict:dict):
+    def __init__(self, creature_dict:str):
         """
         The mechanical aspect of Creatures, NPCs, and PC (meta/desc data is stored as well, but as separate class)
         :param creature_dict: a dictionary that holds all the details for the Creature to be created
@@ -187,6 +189,7 @@ class Creature:
         # identity
         self.creature_type = None
         self.race = None
+        self.race_desc = None
         self.size = None
 
         # core stats
@@ -209,7 +212,7 @@ class Creature:
         self.senses = None
 
         # progression
-        self.level = None               # for player-characters specifically
+        self.level = None
         self.challenge_rating = None    # for monsters/creatures specifically
 
         # inventory
@@ -259,9 +262,50 @@ class Creature:
     def kill_xp(self) -> int:
         return _CR_XP_TABLE[self.challenge_rating]
 
-    def extract_data(self, creature_dict:dict):
-        self.challenge_rating = int(eval(creature_dict["challenge_rating"]))  # deals with CRs that are less than 1, e.g. "1/8"
-        pass
+    def extract_data(self, creature_dict:str):
+        print("Extracting creature data")
+        with open(creature_dict, "r") as base_file:
+            base_data = json.load(base_file)
+
+        """PULL METADATA IF IT EXISTS"""
+
+        if 'name' in base_data.keys():
+            self.metadata.name = base_data["name"]
+
+        if 'age' in base_data.keys():
+            self.metadata.age = base_data["age"]
+
+        if 'gender' in base_data.keys():
+            self.metadata.gender = base_data["gender"]
+
+        if 'physical_desc' in base_data.keys():
+            self.metadata.physical_description = base_data["physical_desc"]
+
+        if 'personality' in base_data.keys():
+            self.metadata.personality = base_data["personality"]
+
+        if 'backstory' in base_data.keys():
+            self.metadata.backstory = base_data["backstory"]
+
+        if 'alignment' in base_data.keys():
+            self.metadata.alignment = Alignment[base_data["alignment"]]
+
+        if 'race' in base_data.keys():
+            # if race exists we need to pull the appropriate data
+            self.race = base_data["race"]
+
+            with open("resources/races.json", "r") as race_file:
+                race_data = json.load(race_file)
+
+            for race_dict in race_data:
+                if race_dict["name"] == self.race:
+                    self.creature_type = race_dict["type"]
+                    self.size = race_dict["size"]
+                    self.speed = race_dict["speed"]
+                    self.race_desc = race_dict["desc"]
+
+
+
 
     def calculate_modifiers(self):
 
@@ -272,5 +316,6 @@ class Creature:
                             "wis": math.floor(float(self.ability_scores["wis"])-10/2),
                             "cha": math.floor(float(self.ability_scores["cha"])-10/2)}
 
-
-print(CreatureSize.creature_size(given_height=100, given_weight=1))
+    def display_info(self):
+        for attribute, value in self.__dict__.items():
+            print(f"{attribute}: {value}")

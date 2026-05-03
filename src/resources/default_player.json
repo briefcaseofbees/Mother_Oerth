@@ -1,0 +1,11 @@
+{
+  "name": "Tav",
+  "age": 25,
+  "gender": "male",
+  "physical_desc": "A blank slate.",
+  "personality": "Submissive and agreeable.",
+  "alignment": "ng",
+  "race": "human",
+  "creature_class": "fighter"
+
+}

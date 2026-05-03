@@ -111,66 +111,82 @@ class Trigger(enum.Enum):
 
 
 class Action(enum.Enum):
-    attack = 0
-    dash = 1
-    disengage = 2
-    dodge = 3
-    help = 4
-    hide = 5
-    influence = 6
-    magic = 7
-    ready = 8
-    search = 9
-    study = 10
-    utilize = 11
+    attack          = {"label": "Attack"}      # attack with a weapon, or unarmed strike
+    dash            = {"label": "Dash"}        # doubles movement speed
+    disengage       = {"label": "Disengage"}   # prevents opportunity attacks
+    dodge           = {"label": "Dodge"}       # makes attacks again you have disadvantage, makes dexterity saving throws have advantage
+    help            = {"label": "Help"}        # help another creature's ability check or attack roll, or administer first aid
+    hide            = {"label": "Hide"}        # make a stealth check
+    influence       = {"label": "Influence"}   # make a deception, intimidation, performance, persuasion or animal handling check to alter a creature's attitude
+    magic           = {"label": "Magic"}       # cast a spell, use a magic item, or use a magical feature
+    ready           = {"label": "Ready"}       # prepare to take an action in response to a trigger you define
+    search          = {"label": "Search"}      # make an insight, medicine, perception, or survival check
+    study           = {"label": "Study"}      # make an arcana, history, investigation, nature, or religion check
+    utilize         = {"label": "Utilize"}    # use a non-magical object
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class ToolProficiency(enum.Enum):
-    alchemist_supplies = 0
-    brewer_supplies = 1
-    calligrapher_supplies = 2
-    carpenter_tools = 3
-    cartographer_tools = 4
-    cobbler_tools = 5
-    cook_utensils = 6
-    glassblower_tools = 7
-    jeweler_tools = 8
-    leatherworker_tools = 9
-    mason_tools = 10
-    painter_supplies = 11
-    potter_tools = 12
-    smith_tools = 13
-    tinker_tools = 14
-    weaver_tools = 15
-    woodcarver_tools = 16
-    disguise_kit = 17
-    forgery_kit = 18
-    gaming_set = 19
-    herbalism_kit = 20
-    musical_instrument = 21
-    navigator_tools = 22
-    poisoner_kit = 23
-    thief_tools = 24
+    alchemist_supplies          = {"label": "Alchemist Supplies"}
+    brewer_supplies             = {"label": "Brewer Supplies"}
+    calligrapher_supplies       = {"label": "Calligrapher Supplies"}
+    carpenter_tools             = {"label": "Carpenter Tools"}
+    cartographer_tools          = {"label": "Cartographer Tools"}
+    cobbler_tools               = {"label": "Cobbler Tools"}
+    cook_utensils               = {"label": "Cook Utensils"}
+    glassblower_tools           = {"label": "Glassblower Tools"}
+    jeweler_tools               = {"label": "Jeweler Tools"}
+    leatherworker_tools         = {"label": "Leatherworker Tools"}
+    mason_tools                 = {"label": "Mason Tools"}
+    painter_supplies            = {"label": "Painter Supplies"}
+    potter_tools                = {"label": "Potter Tools"}
+    smith_tools                 = {"label": "Smith Tools"}
+    tinker_tools                = {"label": "Tinker Tools"}
+    weaver_tools                = {"label": "Weaver Tools"}
+    woodcarver_tools            = {"label": "Woodcarver Tools"}
+    disguise_kit                = {"label": "Disguise Kit"}
+    forgery_kit                 = {"label": "Forgery Kit"}
+    gaming_set                  = {"label": "Gaming Set"}
+    herbalism_kit               = {"label": "Herbalism Kit"}
+    musical_instrument          = {"label": "Musical Instrument"}
+    navigator_tools             = {"label": "Navigator Tools"}
+    poisoner_kit                = {"label": "Poisoner Kit"}
+    thief_tools                 = {"label": "Thief Tools"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class GamingSetType(enum.Enum):
-    dice = 0
-    dragonchess = 1
-    playing_cards = 2
-    threedragon_ante = 3
+    dice                = {"label": "Dice"}
+    dragonchess         = {"label": "Dragonchess"}
+    playing_cards       = {"label": "Playing Cards"}
+    threedragon_ante    = {"label": "Three-Dragon Ante"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class MusicalInstrumentType(enum.Enum):
-    bagpipes = 0
-    drum = 1
-    dulcimer = 2
-    flute = 3
-    horn = 4
-    lute = 5
-    lyre = 6
-    pan_flute = 7
-    shawm = 8
-    viol = 9
+    bagpipes        = {"label": "Bagpipes"}
+    drum            = {"label": "Drum"}
+    dulcimer        = {"label": "Dulcimer"}
+    flute           = {"label": "Flute"}
+    horn            = {"label": "Horn"}
+    lute            = {"label": "Lute"}
+    lyre            = {"label": "Lyre"}
+    pan_flute       = {"label": "Pan Flute"}
+    shawm           = {"label": "Shawm"}
+    viol            = {"label": "Viol"}
+
+    @property
+    def label(self):
+        return self.value["label"]
 
 
 class DamageThreshold(enum.Enum):
@@ -185,10 +201,10 @@ class DamageThreshold(enum.Enum):
 
 
 class ObjectSize(enum.Enum):
-    tiny = {"label": "tiny"}
-    small = {"label": "small"}
-    medium = {"label": "medium"}
-    large = {"label": "large"}
+    tiny        = {"label": "tiny"}
+    small       = {"label": "small"}
+    medium      = {"label": "medium"}
+    large       = {"label": "large"}
 
     @property
     def label(self):
@@ -383,8 +399,8 @@ class PlayerCharacter:
         self.player_name = player_username
         self.player_id = player_id
 
-        self.player_creature = Creature({})  # TODO: create a default creature dict for character creation
-        self.player_class = None
+        self.player_creature = Creature("resources/default_player.json")
+        self.player_classes = []
         self.inspiration = False  # only players get inspiration, but they start with NO inspiration
         self.character_background = None
         self.player_xp = 0
@@ -497,3 +513,7 @@ class PlayerCharacter:
 
         # FILL IN REMAINING DETAILS
         # TODO: metadata, and other details?
+
+
+test_creature = Creature("resources/default_player.json")
+test_creature.display_info()
