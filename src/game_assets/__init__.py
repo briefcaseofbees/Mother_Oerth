@@ -1,6 +1,6 @@
-from .ability import Ability, AbilityDeterminationType
+from .ability import Ability, AbilityDeterminationType, SkillProficiencyRanking, Skill, skill_check
 from .alignment import Alignment, KarmicState, STARTING_ALIGNMENT_COORDINATES
-from .classes import CreatureClass, ClassHitDice
+from .classes import CreatureClass
 from .combat import Combatant, CombatQueue
 from .creature import Creature, CreatureClass, CreatureType, CreatureSize, CreatureConditions, CreatureSentiment, CreatureAttitude, CreatureMetadata
 from .dice import DieType, DiceRoll, D20Modifier
@@ -9,7 +9,6 @@ from .items import CoinValue, MagicalItemRarity, ArmorType, ArmorSlot, MasteryPr
 from .map import Map, MapSquare
 from .optional_ruleset import NonPCDeathSavingThrows, MaterialEnforcement, ItemWeightEnforcement, EncumbranceEnforcement, MultiClassAllowance, EquipTimeEnforcement
 from .progression import _CR_XP_TABLE
-from .skill import SkillProficiencyRanking, Skill, skill_check
 from .spellcasting import MagicalSchool, SpellLevel, SpellDuration, SpellRange, SpellAOE, FocusType, Spell, SpellBook, SpellList
 
 # TODO: correct namespace conflicts across all JSON files, and files so that Python terms are avoided...
@@ -21,7 +20,6 @@ __all__ = [
     "KarmicState",
     "STARTING_ALIGNMENT_COORDINATES",
     "CreatureClass",
-    "ClassHitDice",
     "Combatant",
     "CombatQueue",
     "Creature",

@@ -1,8 +1,8 @@
 import enum, math
-from ability import Ability, Skill
-from alignment import Alignment
-from dice import DieType
-from progression import LevelAdvancement, _CR_XP_TABLE
+from .ability import Ability, Skill
+from .alignment import Alignment
+from .dice import DieType
+from .progression import LevelAdvancement, _CR_XP_TABLE
 
 
 class CreatureAttitude(enum.Enum):

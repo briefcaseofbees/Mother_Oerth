@@ -1,5 +1,5 @@
 import enum, math, random
-from optional_ruleset import D20ModifierStacking, _STACK_MODIFIER_CAP
+from .optional_ruleset import D20ModifierStacking, _STACK_MODIFIER_CAP
 
 _DC_VALUE_TABLE = {
     "very_easy": 5,

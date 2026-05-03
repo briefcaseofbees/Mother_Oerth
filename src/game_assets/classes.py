@@ -1,5 +1,5 @@
 import enum
-from dice import DieType
+from .dice import DieType
 
 _CLASS_HIT_DICE_TABLE = {
     "barbarian":    DieType.d12,

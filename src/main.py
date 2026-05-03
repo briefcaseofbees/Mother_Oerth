@@ -1,7 +1,7 @@
 import random, enum
 import asyncio
 import json
-from game_assets import DieType, DiceRoll, Creature, KarmicState, AbilityDeterminationType, CreatureClass
+from game_assets import *
 
 
 class EventBus:  # TODO: figure out how this works, and what it'll be used for
@@ -20,6 +20,7 @@ class EventBus:  # TODO: figure out how this works, and what it'll be used for
 
 
 def is_encounter_balanced(allies:list[Creature], opponents:list[Creature]) -> bool:
+    # in DND-- encounters are typically balanced via comparison of opponent challenge rating, and party level
     return sum([]) >= sum([])
 
 

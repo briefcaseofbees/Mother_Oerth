@@ -1,6 +1,6 @@
 import enum
-from creature import Creature
-from dice import DieType
+from .creature import Creature
+from .dice import DieType
 
 # TODO: How does combat typically work?
 # TODO: How should turn order in general work? (in/out of encounters)

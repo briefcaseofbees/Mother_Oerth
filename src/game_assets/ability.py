@@ -1,6 +1,6 @@
 import enum
-from dice import DieType, D20Modifier, DifficultyClass
-from progression import LevelAdvancement
+from .dice import DieType, D20Modifier, DifficultyClass
+from .progression import LevelAdvancement
 
 
 class AbilityDeterminationType(enum.Enum):
