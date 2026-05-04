@@ -15,10 +15,10 @@ _DC_VALUE_TABLE = {
 }
 
 
-class D20Test(enum.Enum):
-    ability_check = 0
-    saving_throw = 1
-    attack_roll = 2
+class D20TestType(enum.Enum):
+    ability_check   = enum.auto()
+    saving_throw    = enum.auto()
+    attack_roll     = enum.auto()
 
 
 class DifficultyClass(enum.Enum):
@@ -111,6 +111,7 @@ def resolve_multiple_d20modifiers(modifiers_list:list[D20Modifier], current_sess
             return D20Modifier.normal, 0
         else:
             return modifiers_list[0], 0
+
 
 def d20_test(modifiers:list = None,
              dc:DifficultyClass = DifficultyClass.medium,

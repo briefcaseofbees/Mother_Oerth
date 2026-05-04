@@ -10,3 +10,8 @@ The setting I'm planning to focus on (initially) is the Greyhawk DND setting, as
 
 ## Current Work:
 Currently working on converting the various TTRPG elements listed in the open-source SRD for 5th edition DND to formatted data structures that are robust enough for use in a flexible system.
+
+## Future Work:
+In addition to the aforementioned "pulling from earlier editions of dnd" I will also be making choice modifications to
+aspects of the game (classes, items, mechanics, etc.) that are in line with making the game more fun, balanced, and 
+enjoyable. If I make a change that is inspired by another source, I will cite it.
