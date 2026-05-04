@@ -1,5 +1,14 @@
 [
   {
+    "name": "Unarmed Strike",
+    "type": ["simple", "melee"],
+    "dmg": {"die": "1d1", "type": "bludgeoning"},
+    "properties": [],
+    "mastery": "",
+    "weight": 0,
+    "cost": "0 CP"
+  },
+  {
     "name": "Club",
     "type": ["simple","melee"],
     "dmg": {"die": "1d4", "type": "bludgeoning"},

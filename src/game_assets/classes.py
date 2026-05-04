@@ -7,7 +7,7 @@ _CLASSES_FILENAME = "./resources/classes.json"
 import enum, json
 from .ability import Ability
 from .dice import DieType
-from .items import WeaponType, ArmorType, ToolProficiency
+from .item import WeaponType, ArmorType, ToolProficiency
 
 
 class ClassType(enum.Enum):

@@ -2,7 +2,9 @@
 
 """
 
-import enum
+_WEAPON_JSON_FILENAME = "./resources/weapons.json"
+
+import enum, json
 from .dice import DiceRoll, DieType
 from .combat import DamageType
 
@@ -135,32 +137,41 @@ class AmmoType(enum.Enum):
 
 
 class Weapon:
-    def __init__(self, weapon_dict:dict):
+    def __init__(self, weapon_name:str):
         # attribute initialization
         self.name = None
         self.type = None
         self.range = []  # will have an effective range, and a maximum range
         self.ammo_type = None
-        self.dmg = None  # unsure how to deal with versatile equipment
+        self.dmg = DiceRoll
         self.dmg_type = None
         self.properties = []
         self.mastery = None
         self.weight = None
         self.cost = None
 
-        self.extract_data(weapon_dict)  # pull data from provided dictionary (from JSON file)
+        self.extract_data(weapon_name)  # pull data from provided dictionary (from JSON file)
 
-    def extract_data(self, weapon_dict:dict):
-        self.name = weapon_dict["name"]
-        self.type = weapon_dict["type"]  # list: ["simple"/"martial", "melee"/"ranged"]
+    def extract_data(self, weapon_name:str):
+        with open(_WEAPON_JSON_FILENAME) as weapon_json_file:
+            weapon_dict = json.load(weapon_json_file)
+
+        relevant_entry = None
+
+        for entry in weapon_dict:
+            if entry["name"] == weapon_name:
+                relevant_entry = entry
+
+        self.name = relevant_entry["name"]
+        self.type = relevant_entry["type"]  # list: ["simple"/"martial", "melee"/"ranged"]
 
         # pull damage type, damage dice count, and damage type
-        damage_dice = weapon_dict["dmg"]["die"]  # will be in form "(qty)(die_type)" (as a single sting)
+        damage_dice = relevant_entry["dmg"]["die"]  # will be in form "(qty)(die_type)" (as a single sting)
         qty = int(damage_dice[0])
         die_type = DieType[damage_dice[1:]]
 
         # check if weapon is strictly two_handed
-        is_two_handed = "two_handed" in weapon_dict["properties"]
+        is_two_handed = "two_handed" in relevant_entry["properties"]
 
         if is_two_handed:
             self.dmg = {
@@ -173,15 +184,15 @@ class Weapon:
                 "two_handed": None  # populated if "versatile" tag exists
             }
 
-        self.dmg_type = DamageType[weapon_dict["dmg"]["type"]]
+        self.dmg_type = DamageType[relevant_entry["dmg"]["type"]]
 
-        self.mastery = MasteryProperty[weapon_dict["mastery"]]
-        self.weight = weapon_dict["weight"]
+        self.mastery = MasteryProperty[relevant_entry["mastery"]]
+        self.weight = relevant_entry["weight"]
 
-        self.cost = CoinValue.parse(weapon_dict["cost"])
+        self.cost = CoinValue.parse(relevant_entry["cost"])
 
         # strip properties from dict
-        for prop in weapon_dict["properties"]:
+        for prop in relevant_entry["properties"]:
 
             prop_str = prop.split(" ")  # properties with multiple parts will be space-separated
             self.properties.append(WeaponProperties[prop_str[0]])  # add the first part of the (potentially) multipart prop

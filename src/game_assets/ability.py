@@ -90,49 +90,6 @@ _SKILL_TO_ABILITY_MAPPING = {
 }
 
 
-def skill_check(modifiers:list = None,
-                dc:DifficultyClass = DifficultyClass.medium,
-                roll_type:D20Modifier = D20Modifier.normal):
-    """
-    Rolling a D20 against a check (DC) to determine if roll passes or not
-    :param modifiers: positive or negative influence on outcome of roll
-    :param dc: number that needs to be met, or exceeded
-    :param roll_type: whether the roll is with advantage, disadvantage, or neither (normal)
-    :return: TODO: feel like I need to figure this out more cleanly
-    """
-    roll_history = [DieType.d20.roll()]
-    roll_result = roll_history[0]
-
-    if roll_type == D20Modifier.disadvantage or roll_type == D20Modifier.advantage:
-        roll_history.append(DieType.d20.roll())
-
-        if roll_type == D20Modifier.disadvantage:
-            roll_result = min(roll_history)
-        if roll_type == D20Modifier.advantage:
-            roll_result = max(roll_history)
-
-    # need way to catch 20-rolls (critical success, auto-success)
-
-    premod_roll = roll_result
-
-    if modifiers:
-        for modifier in modifiers:
-            roll_result += int(modifier)
-
-
-    # make below better formatted...
-    return ((f"rolled a {premod_roll}, "
-            f"modifiers = {modifiers} "
-            f"==> {roll_result}"),
-            f"PASSED on DC {f"{dc.label}, ({dc.number})"}" if roll_result >= dc.number
-            else f"FAILED on DC {f"{dc.label}, ({dc.number})"}",
-            f"roll history = {roll_history}")
-
-
-
-
-
-
 class Language(enum.Enum):
     common          = {"label": "Common",       "rarity": "standard"}
     draconic        = {"label": "Draconic",     "rarity": "standard"}

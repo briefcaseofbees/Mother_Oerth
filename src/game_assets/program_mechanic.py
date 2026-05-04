@@ -10,8 +10,10 @@ class Trigger(enum.Enum):
 
     # COMBAT TRIGGERS
     on_attack_rolled = enum.auto()
-    on_hit = enum.auto()
-    on_miss = enum.auto()
+    on_melee_hit = enum.auto()
+    on_melee_miss = enum.auto()
+    on_ranged_hit = enum.auto()
+    on_ranged_miss = enum.auto()
     on_damage_dealt = enum.auto()
     on_damage_taken = enum.auto()
     on_critical_hit = enum.auto()
@@ -22,6 +24,10 @@ class Trigger(enum.Enum):
     on_spell_hit = enum.auto()
     on_concentration_broken = enum.auto()
 
+    # DICE TRIGGERS
+    on_critical_success = enum.auto()
+    on_critical_failure = enum.auto()
+
     # TURN STRUCTURE
     on_turn_start = enum.auto()
     on_turn_end = enum.auto()
@@ -30,12 +36,12 @@ class Trigger(enum.Enum):
     on_initiative_rolled = enum.auto()
 
     # CHARACTER STATE
-    on_heal = enum.auto()
+    on_hp_gained = enum.auto()
+    on_temp_hp_gained = enum.auto()
     on_condition_applied = enum.auto()
     on_condition_removed = enum.auto()
     on_level_up = enum.auto()
     on_ability_score_change = enum.auto()
-    on_temp_hp_gained = enum.auto()
     on_exhaustion_gained = enum.auto()
     on_exhaustion_removed = enum.auto()
 
