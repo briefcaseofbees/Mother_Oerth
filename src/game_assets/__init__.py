@@ -2,7 +2,7 @@ from .ability import Ability, AbilityDeterminationType, SkillProficiencyRanking,
 from .alignment import Alignment, KarmicState, STARTING_ALIGNMENT_COORDINATES
 from .classes import ClassType, CreatureClass
 from .combat import Combatant, CombatQueue
-from .creature import Creature, CreatureType, CreatureSize, CreatureSentiment, CreatureCondition, CreatureAttitude, CreatureMetadata
+from .creature import Creature, CreatureType, CreatureSize, CreatureSentiment, ConditionType, CreatureAttitude, CreatureMetadata
 from .dice import DieType, DiceRoll, D20Modifier
 from .gametime import TimeOfDay, DayOfWeek, Month, FestivalDay, FestivalWeek, FESTIVAL_MONTHS, POST_FESTIVAL_MONTHS, GameTime
 from .item import CoinValue, MagicalItemRarity, ArmorType, ArmorSlot, MasteryProperty, WeaponType, WeaponProperties, AmmoType, Weapon, Armor, AdventuringTool
@@ -27,7 +27,7 @@ __all__ = [
     "CreatureClass",
     "CreatureType",
     "CreatureSize",
-    "CreatureCondition",
+    "ConditionType",
     "CreatureSentiment",
     "CreatureAttitude",
     "CreatureMetadata",

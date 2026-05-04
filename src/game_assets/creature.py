@@ -11,6 +11,8 @@ from .alignment import Alignment
 from .dice import DieType
 from .progression import LevelAdvancement, _CR_XP_TABLE
 
+_CREATURE_JSON_FILENAME = "./resources/creatures.json"
+
 
 class CreatureAttitude(enum.Enum):
     # overall sentiment towards another creature
@@ -146,7 +148,22 @@ _CREATURE_SIZE_DRAG_LIFT_PUSH_TABLE = {
 }
 
 
-class CreatureCondition(enum.Enum):
+class ConditionType(enum.Enum):
+    # https://bg3.wiki/wiki/Conditions  <-- use to borrow some conditions that are not listed (some may fit into Trigger)
+    # page 1: https://bg3.wiki/wiki/Conditions/List_(1-500)
+    # page 2: https://bg3.wiki/wiki/Conditions/List_(501-1000)
+    # page 3: https://bg3.wiki/wiki/Conditions/List_(1001-1500)
+
+    """
+        Conditions can fall under two categories: 'True' Conditions, and 'Derived' Conditions
+            - True Conditions: those imposed by spells, items, etc.
+            - Derived Conditions: those imposed by situation, environment, etc.
+
+            e.g.
+            - "poisoned" condition given by poisoned blade (True Condition) fixed by antidote
+            - "threatened" condition given by non-prone enemy being within 5ft of affected creature
+    """
+
     blinded             = {"label": "Blinded"}
     charmed             = {"label": "Charmed"}
     deafened            = {"label": "Deafened"}
@@ -161,6 +178,7 @@ class CreatureCondition(enum.Enum):
     paralyzed           = {"label": "Paralyzed"}
     poisoned            = {"label": "Poisoned"}
     prone               = {"label": "Prone"}
+    threatened          = {"label": "Threatened"}  # for marking a Creature as being within 5ft of another (page 3 of bg3 conditions)
     # TODO: look at how the exhaustion mechanic works, find out how to put it to code (every 24 hours that a player does not long rest there is a DC check)
     exhaustion_lvl1     = {"label": "Somewhat Exhausted"}
     exhaustion_lvl2     = {"label": "Exhausted"}
@@ -174,7 +192,12 @@ class CreatureCondition(enum.Enum):
         return self.value["label"]
 
 
-
+class CreatureCondition:
+    def __init__(self, condition_name:str):
+        self.name = ConditionType(condition_name).label
+        self.type = ConditionType[condition_name]
+        self.description = None
+        self.condition_effects = None
 
 
 class CreatureMetadata:
@@ -193,10 +216,10 @@ class CreatureMetadata:
 
 class Creature:
 
-    def __init__(self, creature_dict:str):
+    def __init__(self, creature_name:str=None):
         """
         The mechanical aspect of Creatures, NPCs, and PC (meta/desc data is stored as well, but as separate class)
-        :param creature_dict: a dictionary that holds all the details for the Creature to be created
+        :param creature_name: a dictionary that holds all the details for the Creature to be created
         """
 
         # identity
@@ -234,10 +257,12 @@ class Creature:
         self.carrying_capacity = None
 
         # misc
+        self.current_conditions = []  # which effects are currently listed for this creature
         self.languages = None
         self.metadata = CreatureMetadata()
 
-        self.extract_data(creature_dict)  # pull
+        if creature_name is not None:  # if creature name is provided from the get-go, just build it
+            self.extract_data(creature_name)
 
     @property
     def proficiency_bonus(self):
@@ -275,50 +300,24 @@ class Creature:
     def kill_xp(self) -> int:
         return _CR_XP_TABLE[self.challenge_rating]
 
-    def extract_data(self, creature_dict:str):
-        print("Extracting creature data")
-        with open(creature_dict, "r") as base_file:
-            base_data = json.load(base_file)
+    def apply_condition(self, condition:ConditionType):
+        self.current_conditions.append(condition)
 
-        """PULL METADATA IF IT EXISTS"""
+    def remove_condition(self, condition:ConditionType):
+        self.current_conditions.remove(condition)
 
-        if 'name' in base_data.keys():
-            self.metadata.name = base_data["name"]
+    def extract_data(self, creature_name:str, file_override:str=None):
 
-        if 'age' in base_data.keys():
-            self.metadata.age = base_data["age"]
+        if file_override is not None:  # allows for specific directing towards a different file
+            with open(file_override, "r") as creature_raw_file:
+                creature_dict = json.load(creature_raw_file)
+        else:  # otherwise, pull from the general file
+            with open(_CREATURE_JSON_FILENAME, "r") as creature_raw_file:
+                creature_dict = json.load(creature_raw_file)
 
-        if 'gender' in base_data.keys():
-            self.metadata.gender = base_data["gender"]
-
-        if 'physical_desc' in base_data.keys():
-            self.metadata.physical_description = base_data["physical_desc"]
-
-        if 'personality' in base_data.keys():
-            self.metadata.personality = base_data["personality"]
-
-        if 'backstory' in base_data.keys():
-            self.metadata.backstory = base_data["backstory"]
-
-        if 'alignment' in base_data.keys():
-            self.metadata.alignment = Alignment[base_data["alignment"]]
-
-        if 'race' in base_data.keys():
-            # if race exists we need to pull the appropriate data
-            self.race = base_data["race"]
-
-            with open("resources/races.json", "r") as race_file:
-                race_data = json.load(race_file)
-
-            for race_dict in race_data:
-                if race_dict["name"] == self.race:
-                    self.creature_type = race_dict["type"]
-                    self.size = race_dict["size"]
-                    self.speed = race_dict["speed"]
-                    self.race_desc = race_dict["desc"]
-
-
-
+        for entry in creature_dict:
+            if entry["name"] == creature_name:
+                relevant_entry = entry
 
     def calculate_modifiers(self):
 

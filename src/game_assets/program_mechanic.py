@@ -25,8 +25,8 @@ class Trigger(enum.Enum):
     on_concentration_broken = enum.auto()
 
     # DICE TRIGGERS
-    on_critical_success = enum.auto()
-    on_critical_failure = enum.auto()
+    on_critical_success = enum.auto()  # nat 20
+    on_critical_failure = enum.auto()  # nat 1
 
     # TURN STRUCTURE
     on_turn_start = enum.auto()

@@ -176,6 +176,7 @@ class Combatant:
             d20_modifier = D20Modifier.normal
 
             # go through every possible thing to determine what needs to be appended to the d20_modifiers
+            # going through the creatures' CONDITIONS would be the solver for that
 
             if len(d20_modifiers) > 1:
                 d20_modifier, multi_d20_modifier = resolve_multiple_d20modifiers(d20_modifiers,
