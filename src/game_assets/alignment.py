@@ -1,41 +1,12 @@
 """
-code pertaining to alignment, karma, reputation, etc.
+
 """
 
-import enum
-
-
-class Alignment(enum.Enum):
-    lg = {"label": "Lawful Good"}
-    ng = {"label": "Neutral Good"}
-    cg = {"label": "Chaotic Good"}
-    ln = {"label": "Lawful Neutral"}
-    nn = {"label": "True Neutral"}
-    cn = {"label": "Chaotic Neutral"}
-    le = {"label": "Lawful Evil"}
-    ne = {"label": "Neutral Evil"}
-    ce = {"label": "Chaotic Evil"}
-
-    @property
-    def label(self):
-        return self.value["label"]
-
-
-STARTING_ALIGNMENT_COORDINATES = {
-    Alignment.lg: (0.66, 0.66),
-    Alignment.ng: (0.0, 0.66),
-    Alignment.cg: (-0.66, 0.66),
-    Alignment.ln: (0.66, 0.0),
-    Alignment.nn: (0.0, 0.0),
-    Alignment.cn: (-0.66, 0.0),
-    Alignment.le: (0.66, -0.66),
-    Alignment.ne: (0.0, -0.66),
-    Alignment.ce: (-0.66, -0.66),
-}
+from .game_constants import AlignmentType, _STARTING_ALIGNMENT_COORDINATES_TABLE
 
 
 class KarmicState:
-    def __init__(self, starting_alignment:Alignment):
+    def __init__(self, starting_alignment:AlignmentType):
         self.good_evil = 0.0  # range: [-1, 1] (evil, good)
         self.law_chaos = 0.0  # range: [-1, 1] (chaotic, lawful)
         self.good_evil_inertia = 0.0  # 0.0 to 1.0 - resistance to change in good/evil
@@ -44,7 +15,7 @@ class KarmicState:
         self._initialize_alignment(starting_alignment)
 
     @property
-    def alignment(self) -> Alignment:
+    def alignment(self) -> AlignmentType:
         # x (CHAOTIC/LAWFUL)
         if -1 <= self.law_chaos < -0.33:
             x = "Chaotic"
@@ -66,7 +37,7 @@ class KarmicState:
             x = "True"  # catching true neutral edge case
 
         alignment_label = f"{x} {y}"
-        alignment_members = list(Alignment)
+        alignment_members = list(AlignmentType)
 
         for member in alignment_members:
             if member.label == alignment_label:
@@ -77,8 +48,8 @@ class KarmicState:
     def karmic_coords(self):
         return self.law_chaos, self.good_evil
 
-    def _initialize_alignment(self, alignment:Alignment):
-        self.law_chaos, self.good_evil = STARTING_ALIGNMENT_COORDINATES[alignment]
+    def _initialize_alignment(self, alignment:AlignmentType):
+        self.law_chaos, self.good_evil = _STARTING_ALIGNMENT_COORDINATES_TABLE[alignment]
 
     def apply_karmic_delta(self, good_evil_delta: float, law_chaos_delta: float):
         if good_evil_delta * self.good_evil < 0:  # opposite good/evil action to current good/evil leanings (resist)

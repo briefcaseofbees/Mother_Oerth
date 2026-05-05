@@ -2,12 +2,13 @@
 
 """
 
-import enum, random
+import random
 
-from .ability import AbilityDeterminationType
 from .alignment import KarmicState
-from .classes import CreatureClass
 from .creature import Creature
+from .dice import roll_ability_scores
+from .game_constants import AbilityScoreMethod, ClassType
+
 
 class PlayerCharacter:
     def __init__(self, player_username:str, player_id: int):
@@ -30,13 +31,13 @@ class PlayerCharacter:
         self.spellbook = None  # spellcaster specific, very-much a player concern (not stored in Creature class)
 
 
-    def create_character(self, stat_assign_type: AbilityDeterminationType):
+    def create_character(self, stat_assign_type: AbilityScoreMethod):
         # outline the process of making a character in DND (by the player)
 
         # CHOOSE CLASS
         # TODO: figure out how class selection works
         # a. there will be a standard ability score array per class
-        chosen_class = CreatureClass.barbarian  # default: Barbarian
+        chosen_class = ClassType.barbarian  # default: Barbarian
 
         # TODO: need to delegate the below to an event-based process... (UI-interaction, essentially)
 
@@ -58,26 +59,16 @@ class PlayerCharacter:
         # DETERMINE ABILITY SCORES
         match stat_assign_type:
 
-            case AbilityDeterminationType.random:  # random rolls with 4d6, drop lowest die value
-                rolled_stats = []
-                for stat_roll in range(6):
-                    results = []
+            case AbilityScoreMethod.random:  # random rolls with 4d6, drop lowest die value
+                rolled_stats = roll_ability_scores()
 
-                    # add grace-roll mechanic for rolling stats... (if I feel like it's necessary)
 
-                    for dice_roll in range(4):
-                        results.append(random.randint(1, 6))
-
-                    results.sort()
-                    result_sum = sum(results[1:])
-                    rolled_stats[stat_roll] = result_sum
-
-            case AbilityDeterminationType.standard:  # standard array values
+            case AbilityScoreMethod.standard:  # standard array values
                 rolled_stats = [15,14,13,12,10,8]
 
                 # need way to allow users to assign values to stats with UI
 
-            case AbilityDeterminationType.manual:
+            case AbilityScoreMethod.manual:
                 rolled_stats = [8,8,8,8,8,8]
                 point_pool = 27
 

@@ -2,31 +2,11 @@
 
 """
 
-import enum
-from typing import Union
 from .creature import Creature
 from .object import ObjectInstance
-from .dice import DieType, d20_test, D20Modifier, resolve_multiple_d20modifiers
-from .item import Weapon, WeaponType, WeaponProperties
-from .optional_ruleset import D20ModifierStacking
-
-# TODO: How does combat typically work?
-# TODO: How should turn order in general work? (in/out of encounters)
-
-class DamageType(enum.Enum):
-    piercing = 0
-    bludgeoning = 1
-    slashing = 2
-    fire = 3
-    cold = 4
-    lightning = 5
-    thunder = 6
-    acid = 7
-    poison = 8
-    psychic = 9
-    radiant = 10
-    necrotic = 11
-    force = 12
+from .item import Weapon
+from .dice import d20_test, Dice, resolve_multiple_d20modifiers
+from .game_constants import DieType, D20ModifierType, D20ModifierStackingRule, WeaponPropertyType, WeaponType
 
 
 class Combatant:
@@ -39,9 +19,9 @@ class Combatant:
         self.movement_speed = 0  #
 
     def roll_initiative(self):
-        init_roll = DieType.d20.roll()  # roll basic d20 for base initiative number
+        init_roll = Dice(die=DieType.d20, qty=1).roll()  # roll basic d20 for base initiative number
 
-        # TODO: figure out how to define check for initiative modifiers ("alert" feat, gear, etc.)
+        # creature conditions will be used for populating init_modifiers
         init_modifiers = [1,-2,3]  # placeholder for code that will actually pull all the
         init_modifiers.sort(reverse=True)  # sort modifiers by value (highest at end of list)
         highest_mod = init_modifiers[0]  # in the case of ties, we use the "highest mod" rule
@@ -99,12 +79,12 @@ class Combatant:
             if WeaponType["melee"] in weapon.type:  # weapon.type is a list that will have properties in it
                 weapon_attack_reach.append(5)
                 # base case: attack must be made within 5ft
-                if WeaponProperties["reach"] in weapon.properties:
+                if WeaponPropertyType["reach"] in weapon.properties:
                     # reach increases effective range by 5ft
                     weapon_attack_reach[0] += 5
                     pass
 
-                if WeaponProperties["thrown"] in weapon.properties:
+                if WeaponPropertyType["thrown"] in weapon.properties:
                     weapon_attack_reach.append(weapon.range)
                     pass
                 pass
@@ -173,14 +153,14 @@ class Combatant:
             """
             d20_modifiers = []  # will be populated with d20 modifiers (advantage, disadvantage)
             roll_modifiers = []
-            d20_modifier = D20Modifier.normal
+            d20_modifier = D20ModifierType.normal
 
             # go through every possible thing to determine what needs to be appended to the d20_modifiers
             # going through the creatures' CONDITIONS would be the solver for that
 
             if len(d20_modifiers) > 1:
                 d20_modifier, multi_d20_modifier = resolve_multiple_d20modifiers(d20_modifiers,
-                                                              current_session_rules=D20ModifierStacking.disallowed)
+                                                                                 current_session_rules=D20ModifierStackingRule.disallowed)
                 if multi_d20_modifier != 0:
                     roll_modifiers.append(multi_d20_modifier)
             elif len(d20_modifiers) == 1:
@@ -251,38 +231,6 @@ class CombatQueue(list):
         # should wait for a creature to end their turn (event-based signal (if player), boolean-based signal (if NPC))
         pass
 
-
-# need to come up with a decision tree to map how an NPC combatant would behave
-
-class CombatBehaviour(enum.Enum):
-    # poles of combat behaviour
-
-    # aggression
-    aggressive = 0
-    cowardice = 1
-
-    # competency
-    strategic = 2  # are they professionally trained? or just experienced?
-    unhinged = 3  # do they have a history of barbarism, or are they beastial?
-
-    # comfortable range
-    close_quarters = 4
-    ranged = 5
-
-    organized = 6
-    detached = 7
-
-    risky = 8
-    cautious = 9
-
-    # facets of combat behaviour...?
-    # some of these have priorities and layers (with specific creatures having access to some, or all of the layers)
-    # morale (winning/losing)
-    # CR of enemies versus party
-    # recent occurrences (deaths/kills/etc.)
-    # intelligence of enemies
-
-    # dynamic emergence of behavioural tree based on the above factors
 
 def is_encounter_balanced(allies:list[Creature], opponents:list[Creature]) -> bool:
     # in DND-- encounters are typically balanced via comparison of opponent challenge rating, and party level

@@ -2,110 +2,7 @@
 
 """
 
-import enum
-
-
-class TimeOfDay(enum.Enum):
-    dead_of_night = {"label": "Dead of Night", "stealth_bonus": 2, "npc_activity": "asleep"}  # 12am - 3am
-    twilight =      {"label": "Twilight", "stealth_bonus": 1, "npc_activity": "asleep"}  # 3am - 6am
-    dawn =          {"label": "Dawn", "stealth_bonus": 1, "npc_activity": "waking"}  # 6am - 9am
-    morning =       {"label": "Morning", "stealth_bonus": 0, "npc_activity": "active"}  # 9am - 12pm
-    midday =        {"label": "Midday", "stealth_bonus": 0, "npc_activity": "active"}  # 12pm - 3pm
-    afternoon =     {"label": "Afternoon", "stealth_bonus": 0, "npc_activity": "active"}  # 3pm - 6pm
-    dusk =          {"label": "Dusk", "stealth_bonus": 1, "npc_activity": "winding_down"}  # 6pm - 9pm
-    night =         {"label": "Night", "stealth_bonus": 2, "npc_activity": "minimal"}  # 9pm - 12am
-
-    @property
-    def label(self):
-        return self.value["label"]
-
-
-class DayOfWeek(enum.Enum):
-    starday     = {"label": "Starday"}   # saturday
-    sunday      = {"label": "Sunday"}    # sunday
-    moonday     = {"label": "Moonday"}   # monday
-    godsday     = {"label": "Godsday"}   # tuesday
-    waterday    = {"label": "Waterday"}  # wednesday
-    earthday    = {"label": "Earthday"}  # thursday
-    freeday     = {"label": "Freeday"}   # friday
-
-    @property
-    def label(self):
-        return self.value["label"]
-
-    @property
-    def next(self):
-        members = list(DayOfWeek)
-        current_index = members.index(self)
-        next_member = members[(current_index + 1) % len(members)]
-        return next_member
-
-
-class Month(enum.Enum):
-    fireseek    = {"label": "Fireseek"}  # january equivalent
-    readying    = {"label": "Readying"}
-    coldeven    = {"label": "Coldeven"}
-    planting    = {"label": "Planting"}
-    flocktime   = {"label": "Flocktime"}
-    wealsun     = {"label": "Wealsun"}
-    reaping     = {"label": "Reaping"}
-    goodmonth   = {"label": "Goodmonth"}
-    harvester   = {"label": "Harvester"}
-    patchwall   = {"label": "Patchwall"}
-    ready_reat  = {"label": "Ready'reat"}
-    sunsebb     = {"label": "Sunsebb"}
-
-    @property
-    def label(self):
-        return self.value["label"]
-
-    @classmethod
-    def index(cls, month_num):
-        members = list(cls.__members__.values())
-        return members[month_num - 1]
-
-    def next(self):
-        members = list(Month)
-        current_index = members.index(self)
-        next_member = members[(current_index + 1) % len(members)]
-        return next_member
-
-
-class FestivalDay(enum.Enum):
-    day_1 = {"label": "Low Festival (Starday)"}
-    day_2 = {"label": "Low Festival (Sunday)"}
-    day_3 = {"label": "Low Festival (Moonday)"}
-    day_4 = {"label": "Mid-Festival (Godsday)"}
-    day_5 = {"label": "High Festival (Waterday)"}
-    day_6 = {"label": "High Festival (Earthday)"}
-    day_7 = {"label": "High Festival (Freeday)"}
-
-
-class FestivalWeek(enum.Enum):
-    needfest = 0  # Midwinter     (between Sunsebb and Fireseek)
-    growfest = 1  # Spring        (between Coldeven and Planting)
-    richfest = 2  # Midsummer     (between Wealsun and Reaping)
-    brewfest = 3  # Harvest       (between Harvester and Patchwall)
-
-    @property
-    def label(self):
-        festival_labels = ["Needfest", "Growfest", "Richfest", "Brewfest"]
-        return festival_labels[self.value]
-
-
-FESTIVAL_MONTHS = {
-    Month.sunsebb: FestivalWeek.needfest,
-    Month.coldeven: FestivalWeek.growfest,
-    Month.wealsun: FestivalWeek.richfest,
-    Month.harvester: FestivalWeek.brewfest,
-}
-
-POST_FESTIVAL_MONTHS = {
-    FestivalWeek.needfest: Month.fireseek,
-    FestivalWeek.growfest: Month.planting,
-    FestivalWeek.richfest: Month.reaping,
-    FestivalWeek.brewfest: Month.patchwall,
-}
+from .game_constants import DayOfWeek, Month, TimeOfDay, FestivalDay, FestivalWeek, _FESTIVAL_MONTH_TABLE, _POST_FESTIVAL_MONTH_TABLE
 
 
 class GameTime:
@@ -174,13 +71,13 @@ class GameTime:
                 self.year += 1
                 self.month = Month.fireseek
             else:
-                self.month = POST_FESTIVAL_MONTHS[self.festival]
+                self.month = _POST_FESTIVAL_MONTH_TABLE[self.festival]
             self.festival = None
             self.day_num = 1
 
         if self.day_num > 28:  # move beyond month (possibly into festival)
-            if self.month in FESTIVAL_MONTHS:
-                self.festival = FESTIVAL_MONTHS[self.month]
+            if self.month in _FESTIVAL_MONTH_TABLE:
+                self.festival = _FESTIVAL_MONTH_TABLE[self.month]
                 self.month = None  # temporary state...
                 self.day_num = 1
             else:

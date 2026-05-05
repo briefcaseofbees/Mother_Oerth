@@ -2,66 +2,10 @@
 
 """
 
-import enum
-
 # TODO: make sure each spellcaster class has their spellcasting ability included in their class dict in "classes.json"
 #   Clerics, Druids, Rangers: wis
 #   Wizards: int
 #   Bards, Paladins, Sorcerers, Warlocks: cha
-
-
-class MagicalSchool(enum.Enum):
-    abjuration = 0      # focus: protection/shielding
-    conjuration = 1     # focus: summoning/creating magical objects/creatures
-    divination = 2      # focus: allows caster to perceive beyond their normal senses
-    enchantment = 3     # focus: enchants mind or body of others
-    evocation = 4       # focus: manipulates elemental energies
-    illusion = 5        # focus: creates illusions to deceive others
-    necromancy = 6      # focus: manipulates dead creatures
-    transmutation = 7   # focus: manipulates matter and life
-
-
-class SpellLevel(enum.Enum):
-    cantrip = 0
-    first_level = 1
-    second_level = 2
-    third_level = 3
-    fourth_level = 4
-    fifth_level = 5
-    sixth_level = 6
-    seventh_level = 7
-    eighth_level = 8
-    nineth_level = 9
-
-
-class SpellDuration(enum.Enum):
-    instant = 0
-    concentration = 1
-    time_span = 2
-
-
-class SpellRange(enum.Enum):
-    self = 0
-    touch = 1
-    distance = 2
-
-
-class SpellAOE(enum.Enum):
-    target = -1  # single target (no AOE), can refer to spells that affect multiple targets
-    # TODO: need to determine the exact dimensions of a cone, cube, and any other multi-square AOEs
-    cone = 0
-    cube = 1
-    cylinder = 2
-    emanation = 3
-    line = 4
-    sphere = 5
-
-
-class FocusType(enum.Enum):
-    arcane_focus = 0  # applies to sorcerers, warlocks, wizards
-    druidic_focus = 1  # applies to druids
-    holy_symbol = 2  # applies to clerics, paladins
-    musical_instrument = 3  # applies to bards
 
 
 class Spell:
