@@ -42,7 +42,8 @@ class KarmicState:
         for member in alignment_members:
             if member.label == alignment_label:
                 return member
-        return None
+
+        return AlignmentType.nn  # returns true neutral as a default, but this should probably be fixed to throw an error
 
     @property
     def karmic_coords(self):

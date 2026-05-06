@@ -6,7 +6,7 @@ import json
 from .dice import Dice
 from .economy import Coins
 from .game_constants import AmmoType, ArmorType, DamageType, DieType, _WEAPONS_JSON_FILE_PATH, _ADVENTURING_GEAR_JSON_FILE_PATH, _ARMORS_JSON_FILE_PATH, WeaponMasteryType, WeaponPropertyType
-
+from .program_mechanic import extract_data
 
 class Weapon:
     def __init__(self, weapon_name:str):
@@ -22,11 +22,11 @@ class Weapon:
         self.weight = None
         self.cost = None
 
-        self.extract_data(weapon_name)  # pull data from provided dictionary (from JSON file)
+        self.populate_object(weapon_name)  # pull data from provided dictionary (from JSON file)
 
-    def extract_data(self, weapon_name:str):
-        with open(_WEAPONS_JSON_FILE_PATH) as weapon_json_file:
-            weapon_dict = json.load(weapon_json_file)
+    def populate_object(self, weapon_name:str):
+
+        weapon_dict = extract_data(_WEAPONS_JSON_FILE_PATH)
 
         relevant_entry = None
 
@@ -34,61 +34,66 @@ class Weapon:
             if entry["name"] == weapon_name:
                 relevant_entry = entry
 
-        self.name = relevant_entry["name"]
-        self.type = relevant_entry["type"]  # list: ["simple"/"martial", "melee"/"ranged"]
-
-        # pull damage type, damage dice count, and damage type
-        damage_dice = relevant_entry["dmg"]["die"]  # will be in form "(qty)(die_type)" (as a single sting)
-        qty = int(damage_dice[0])
-        die_type = DieType[damage_dice[1:]]
-
-        # check if weapon is strictly two_handed
-        is_two_handed = "two_handed" in relevant_entry["properties"]
-
-        if is_two_handed:
-            self.dmg = {
-                "one_handed": None,  # will remain blank
-                "two_handed": Dice(die_type, qty),
-            }
+        if relevant_entry is None:
+            print(f"Weapon {weapon_name} not found in JSON file")
         else:
-            self.dmg = {
-                "one_handed": Dice(die_type, qty),
-                "two_handed": None  # populated if "versatile" tag exists
-            }
+            print(f"Weapon {weapon_name} found in JSON file")
 
-        self.dmg_type = DamageType[relevant_entry["dmg"]["type"]]
+            self.name = relevant_entry["name"]
+            self.type = relevant_entry["type"]  # list: ["simple"/"martial", "melee"/"ranged"]
 
-        self.mastery = WeaponMasteryType[relevant_entry["mastery"]]
-        self.weight = relevant_entry["weight"]
+            # pull damage type, damage dice count, and damage type
+            damage_dice = relevant_entry["dmg"]["die"]  # will be in form "(qty)(die_type)" (as a single sting)
+            qty = int(damage_dice[0])
+            die_type = DieType[damage_dice[1:]]
 
-        self.cost = Coins.parse(relevant_entry["cost"])
+            # check if weapon is strictly two_handed
+            is_two_handed = "two_handed" in relevant_entry["properties"]
 
-        # strip properties from dict
-        for prop in relevant_entry["properties"]:
+            if is_two_handed:
+                self.dmg = {
+                    "one_handed": None,  # will remain blank
+                    "two_handed": Dice(die_type, qty),
+                }
+            else:
+                self.dmg = {
+                    "one_handed": Dice(die_type, qty),
+                    "two_handed": None  # populated if "versatile" tag exists
+                }
 
-            prop_str = prop.split(" ")  # properties with multiple parts will be space-separated
-            self.properties.append(WeaponPropertyType[prop_str[0]])  # add the first part of the (potentially) multipart prop
+            self.dmg_type = DamageType[relevant_entry["dmg"]["type"]]
 
-            if len(prop_str) > 1:
-                if prop_str[0] == "versatile":  # prop_str[1] will be in form "versatile (1d8)" - strip the parens
+            self.mastery = WeaponMasteryType[relevant_entry["mastery"]]
+            self.weight = relevant_entry["weight"]
 
-                    # strip brackets from second item, and pull details from resultant string
-                    two_handed_dice = prop_str[1].strip("()")
-                    qty_2h = int(two_handed_dice[0])
-                    die_2h = DieType[two_handed_dice[1:]]
+            self.cost = Coins.parse(relevant_entry["cost"])
 
-                    self.dmg["two_handed"] = Dice(die=die_2h, qty=qty_2h)
+            # strip properties from dict
+            for prop in relevant_entry["properties"]:
 
-                elif prop_str[0] == "thrown":
-                    self.range.append(prop_str[1].strip("()").split("/"))  # pull ranges from second item in property
+                prop_str = prop.split(" ")  # properties with multiple parts will be space-separated
+                self.properties.append(WeaponPropertyType[prop_str[0]])  # add the first part of the (potentially) multipart prop
 
-                elif prop_str[0] == "ammunition":  # prop_str[1] will have ranges, but prop_str[2] will have ammo type
-                    self.range.append(prop_str[1].strip("()").split("/"))  # pull ranges from second item in property
-                    self.ammo_type = AmmoType[prop_str[2].strip("()")]  # pull ammo type from third item in property
+                if len(prop_str) > 1:
+                    if prop_str[0] == "versatile":  # prop_str[1] will be in form "versatile (1d8)" - strip the parens
+
+                        # strip brackets from second item, and pull details from resultant string
+                        two_handed_dice = prop_str[1].strip("()")
+                        qty_2h = int(two_handed_dice[0])
+                        die_2h = DieType[two_handed_dice[1:]]
+
+                        self.dmg["two_handed"] = Dice(die=die_2h, qty=qty_2h)
+
+                    elif prop_str[0] == "thrown":
+                        self.range.append(prop_str[1].strip("()").split("/"))  # pull ranges from second item in property
+
+                    elif prop_str[0] == "ammunition":  # prop_str[1] will have ranges, but prop_str[2] will have ammo type
+                        self.range.append(prop_str[1].strip("()").split("/"))  # pull ranges from second item in property
+                        self.ammo_type = AmmoType[prop_str[2].strip("()")]  # pull ammo type from third item in property
 
 
 class Armor:
-    def __init__(self, armor_dict:dict):
+    def __init__(self, armor_name:str):
         self.name = None
         self.type = None
         self.ac = {"num": None, "dex_mod": False, "max_dex_mod": 0}
@@ -97,24 +102,36 @@ class Armor:
         self.weight = None
         self.cost = Coins()
 
-        # TODO: add don/duff time (when appropriate)
+        self.populate_object(armor_name)
 
-        self.extract_data(armor_dict)
+    def populate_object(self, armor_name:str):
 
-    def extract_data(self, armor_dict:dict):
-        self.name = armor_dict["name"]
-        self.type = ArmorType[armor_dict["type"]]
-        self.ac["num"] = armor_dict["ac"]["num"]
-        self.ac["dex_mod"] = armor_dict["ac"]["dex_mod"]
-        self.ac["max_dex_mod"] = armor_dict["ac"]["max_dex"]
-        self.str_req = armor_dict["str_req"]
-        self.stealth_disadvantage = armor_dict["stealth_disadvantage"]
-        self.weight = armor_dict["weight"]
-        self.cost.parse(cost_string=armor_dict["cost"])
+        armor_dict = extract_data(_ARMORS_JSON_FILE_PATH)
+
+        relevant_entry = None
+
+        for entry in armor_dict:
+            if entry["name"] == armor_name:
+                relevant_entry = entry
+
+        if relevant_entry is None:
+            print(f"Armor {armor_name} not found in JSON file")
+        else:
+            print(f"Armor {armor_name} found in JSON file")
+
+            self.name = relevant_entry["name"]
+            self.type = ArmorType[relevant_entry["type"]]
+            self.ac["num"] = relevant_entry["ac"]["num"]
+            self.ac["dex_mod"] = relevant_entry["ac"]["dex_mod"]
+            self.ac["max_dex_mod"] = relevant_entry["ac"]["max_dex"]
+            self.str_req = relevant_entry["str_req"]
+            self.stealth_disadvantage = relevant_entry["stealth_disadvantage"]
+            self.weight = relevant_entry["weight"]
+            self.cost.parse(cost_string=relevant_entry["cost"])
 
 
 class AdventuringTool:
-    def __init__(self):
+    def __init__(self, adventuring_tool_name:str):
         self.item_id = None
         self.name = None
         self.cost = None
@@ -126,5 +143,17 @@ class AdventuringTool:
         self.type = None
         self.rarity = None
 
-    def extract_data(self, adventuring_tool_dict:dict):
-        pass
+        self.populate_object(adventuring_tool_name)
+
+    def populate_object(self, adventuring_tool_name:str):
+        adventuring_tool_dict = extract_data(_ADVENTURING_GEAR_JSON_FILE_PATH)
+
+        relevant_entry = None
+        for entry in adventuring_tool_dict:
+            if entry["name"] == adventuring_tool_name:
+                relevant_entry = entry
+
+        if relevant_entry is None:
+            print(f"Adventuring tool {adventuring_tool_name} not found in JSON file")
+        else:
+            print(f"Adventuring tool {adventuring_tool_name} found in JSON file")

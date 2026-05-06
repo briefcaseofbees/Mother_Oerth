@@ -1,15 +1,12 @@
 """
 
 """
-
-# TODO: make sure each spellcaster class has their spellcasting ability included in their class dict in "classes.json"
-#   Clerics, Druids, Rangers: wis
-#   Wizards: int
-#   Bards, Paladins, Sorcerers, Warlocks: cha
+from .program_mechanic import extract_data
+from .game_constants import _SPELLS_JSON_FILE_PATH
 
 
 class Spell:
-    def __init__(self, spell_dict:dict):
+    def __init__(self, spell_name:str):
         self.spell_id = None
         self.name = None
         self.spell_level = None
@@ -24,10 +21,22 @@ class Spell:
         self.spell_list = None          # which classes can use it
         self.higher_level_cast = None   # what happens when cast at higher level
 
-        self.extract_data(spell_dict)
+        self.populate_object(spell_name)
 
-    def extract_data(self, spell_dict:dict):
-        pass
+    def populate_object(self, spell_name:str):
+
+        spell_dict = extract_data(_SPELLS_JSON_FILE_PATH)
+
+        relevant_entry = None
+
+        for entry in spell_dict:
+            if entry['name'] == spell_name:
+                relevant_entry = entry
+
+        if relevant_entry is None:
+            print(f"Spell {spell_name} not found in JSON file")
+        else:
+            print(f"Spell {spell_name} found in JSON file")
 
 
 class SpellBook:

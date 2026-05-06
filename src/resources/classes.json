@@ -1,103 +1,145 @@
 [
   {
     "name": "artificer",
-    "desc": "Makers of magic-infused objects, artificers are defined by their inventive nature. They see magic as a complex system waiting to be decoded and controlled. Instead of ephemeral spells, they seek to craft durable, useful, marvelous magical items."
+    "desc": "Makers of magic-infused objects, artificers are defined by their inventive nature. They see magic as a complex system waiting to be decoded and controlled. Instead of ephemeral spells, they seek to craft durable, useful, marvelous magical items.",
+    "saving_throw_profs": ["con", "int"],
+    "skill_profs": ["arcana", "history", "investigation", "medicine", "nature", "perception", "sleight_of_hand"],
+    "weapon_profs": ["simple"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": ["thief_tools", "tinker_tools", "artisan_tools"],
+    "spell_casting_ability": "int",
+    "starting_equip": []
   },
   {
     "name": "barbarian",
     "desc": "For some, their rage springs from a communion with fierce animal spirits. Others draw from a roiling reservoir of anger at a world full of pain. For every barbarian, rage is a power that fuels not just a battle frenzy but also uncanny reflexes, resilience, and feats of strength.",
-    "saving_throw_profs": ["str, con"],
+    "saving_throw_profs": ["str", "con"],
     "skill_profs": ["animal_handling", "athletics", "nature", "perception", "survival"],
     "weapon_profs": ["simple", "martial"],
     "armor_profs": ["light", "medium", "shield"],
     "tool_profs": [],
-    "starting_equip": [["Greataxe", "Handaxe (4)", "Explorer's Pack", "15 GP"],["75 GP"]],
     "spell_casting_ability": null,
-    "features": [
-      {"class_features": ["Rage", "Unarmored Defense", "Weapon Mastery"],
-        "rages": 2, "rage_damage": 2, "weapon_mastery": 2},
-      {"class_features": ["Danger Sense", "Reckless Attack"],
-        "rages": 2, "rage_damage": 2, "weapon_mastery": 2},
-      {"class_features": ["Barbarian Subclass", "Primal Knowledge"],
-        "rages": 3, "rage_damage": 2, "weapon_mastery": 2},
-      {"class_features": ["Ability Score Improvement"],
-        "rages": 3, "rage_damage": 2, "weapon_mastery": 3},
-      {"class_features": ["Extra Attack", "Fast Movement"],
-        "rages": 3, "rage_damage": 2, "weapon_mastery": 3},
-      {"class_features": ["Subclass Feature"],
-        "rages": 4, "rage_damage": 2, "weapon_mastery": 3},
-      {"class_features": ["Feral Instinct", "Instinctive Pounce"],
-        "rages": 4, "rage_damage": 2, "weapon_mastery": 3},
-      {"class_features": ["Ability Score Improvement"],
-        "rages": 4, "rage_damage": 2, "weapon_mastery": 3},
-      {"class_features": ["Brutal Strike"],
-        "rages": 4, "rage_damage": 3, "weapon_mastery": 3},
-      {"class_features": ["Subclass Feature"],
-        "rages": 4, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Relentless Rage"],
-        "rages": 4, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Ability Score Improvement"],
-        "rages": 5, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Improved Brutal Strike"],
-        "rages": 5, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Subclass Feature"],
-        "rages": 5, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Persistent Rage"],
-        "rages": 5, "rage_damage": 3, "weapon_mastery": 4},
-      {"class_features": ["Ability Score Improvement"],
-        "rages": 5, "rage_damage": 4, "weapon_mastery": 4},
-      {"class_features": ["Improved Brutal Strike"],
-        "rages": 6, "rage_damage": 4, "weapon_mastery": 4},
-      {"class_features": ["Indomitable Might"],
-        "rages": 6, "rage_damage": 4, "weapon_mastery": 4},
-      {"class_features": ["Epic Boon"],
-        "rages": 6, "rage_damage": 4, "weapon_mastery": 4},
-      {"class_features": ["Primal Champion"],
-        "rages": 6, "rage_damage": 4, "weapon_mastery": 4}
-    ]
+    "starting_equip": [["Greataxe", "Handaxe (4)", "Explorer's Pack", "15 GP"],["75 GP"]]
   },
   {
     "name": "bard",
-    "desc": "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain."
+    "desc": "Whether scholar, skald, or scoundrel, a bard weaves magic through words and music to inspire allies, demoralize foes, manipulate minds, create illusions, and even heal wounds. The bard is a master of song, speech, and the magic they contain.",
+    "saving_throw_profs": ["dex", "cha"],
+    "skill_profs": ["any (3)"],
+    "weapon_profs": ["simple"],
+    "armor_profs": ["light"],
+    "tool_profs": ["musical_instruments (3)"],
+    "spell_casting_ability": "cha",
+    "starting_equip": []
   },
   {
     "name": "cleric",
-    "desc": "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic."
+    "desc": "Clerics are intermediaries between the mortal world and the distant planes of the gods. As varied as the gods they serve, clerics strive to embody the handiwork of their deities. No ordinary priest, a cleric is imbued with divine magic.",
+    "saving_throw_profs": ["wis", "cha"],
+    "skill_profs": ["history", "insight", "medicine", "persuasion", "religion"],
+    "weapon_profs": ["simple"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": [],
+    "spell_casting_ability": "wis",
+    "starting_equip": []
   },
   {
     "name": "druid",
-    "desc": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will."
+    "desc": "Whether calling on the elemental forces of nature or emulating the creatures of the animal world, druids are an embodiment of nature's resilience, cunning, and fury. They claim no mastery over nature, but see themselves as extensions of nature's indomitable will.",
+    "saving_throw_profs": ["int", "wis"],
+    "skill_profs": ["arcana", "animal_handling", "insight", "medicine", "nature", "perception", "religion", "survival"],
+    "weapon_profs": ["club", "dagger", "darts", "javelins", "maces", "quarterstaff", "scimitar", "sickles", "slings", "spears"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": ["herbalism_kit"],
+    "spell_casting_ability": "wis",
+    "starting_equip": []
   },
   {
     "name": "fighter",
-    "desc": "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face."
+    "desc": "Fighters share an unparalleled mastery with weapons and armor, and a thorough knowledge of the skills of combat. They are well acquainted with death, both meting it out and staring it defiantly in the face.",
+    "saving_throw_profs": ["str", "con"],
+    "skill_profs": ["acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival"],
+    "weapon_profs": ["simple", "martial"],
+    "armor_profs": ["light", "medium", "heavy", "shield"],
+    "tool_profs": [],
+    "spell_casting_ability": null,
+    "starting_equip": []
   },
   {
     "name": "monk",
-    "desc": "Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does."
+    "desc": "Monks are united in their ability to magically harness the energy that flows in their bodies. Whether channeled as a striking display of combat prowess or a subtler focus of defensive ability and speed, this energy infuses all that a monk does.",
+    "saving_throw_profs": ["str", "dex"],
+    "skill_profs": ["acrobatics", "athletics", "history", "insight", "religion", "stealth"],
+    "weapon_profs": ["simple", "short_sword"],
+    "armor_profs": [],
+    "tool_profs": ["artisan_tools (1)", "musical_instruments (1)"],
+    "spell_casting_ability": null,
+    "starting_equip": []
   },
   {
     "name": "paladin",
-    "desc": "Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond."
+    "desc": "Whether sworn before a god's altar and the witness of a priest, in a sacred glade before nature spirits and fey beings, or in a moment of desperation and grief with the dead as the only witness, a paladin's oath is a powerful bond.",
+    "saving_throw_profs": ["wis", "cha"],
+    "skill_profs": ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"],
+    "weapon_profs": ["simple", "martial"],
+    "armor_profs": ["light", "medium", "heavy", "shield"],
+    "tool_profs": [],
+    "spell_casting_ability": "cha",
+    "starting_equip": []
   },
   {
     "name": "ranger",
-    "desc": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch."
+    "desc": "Far from the bustle of cities and towns, past the hedges that shelter the most distant farms from the terrors of the wild, amid the dense-packed trees of trackless forests and across wide and empty plains, rangers keep their unending watch.",
+    "saving_throw_profs": ["str", "dex"],
+    "skill_profs": ["animal_handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"],
+    "weapon_profs": ["simple", "martial"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": [],
+    "spell_casting_ability": "wis",
+    "starting_equip": []
   },
   {
     "name": "rogue",
-    "desc": "Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party."
+    "desc": "Rogues rely on skill, stealth, and their foes' vulnerabilities to get the upper hand in any situation. They have a knack for finding the solution to just about any problem, demonstrating a resourcefulness and versatility that is the cornerstone of any successful adventuring party.",
+    "saving_throw_profs": ["dex", "int"],
+    "skill_profs": ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion"],
+    "weapon_profs": ["simple", "hand_crossbow", "longsword", "rapier", "shortsword"],
+    "armor_profs": ["light"],
+    "tool_profs": ["thief_tools"],
+    "spell_casting_ability": null,
+    "starting_equip": []
   },
   {
     "name": "sorcerer",
-    "desc": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer."
+    "desc": "Sorcerers carry a magical birthright conferred upon them by an exotic bloodline, some otherworldly influence, or exposure to unknown cosmic forces. No one chooses sorcery; the power chooses the sorcerer.",
+    "saving_throw_profs": ["str", "con"],
+    "skill_profs": ["animal_handling", "athletics", "nature", "perception", "survival"],
+    "weapon_profs": ["simple", "martial"],
+    "armor_profs": ["light", "medium", "shield"],
+    "tool_profs": [],
+    "spell_casting_ability": "cha",
+    "starting_equip": []
   },
   {
     "name": "warlock",
-    "desc": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular."
+    "desc": "Warlocks are seekers of the knowledge that lies hidden in the fabric of the multiverse. Through pacts made with mysterious beings of supernatural power, warlocks unlock magical effects both subtle and spectacular.",
+    "saving_throw_profs": ["con", "cha"],
+    "skill_profs": ["arcana", "deception", "insight", "intimidation", "persuasion", "religion"],
+    "weapon_profs": ["dagger", "dart", "sling", "quarterstaff", "light_crossbow"],
+    "armor_profs": [],
+    "tool_profs": [],
+    "spell_casting_ability": "cha",
+    "starting_equip": []
   },
   {
     "name": "wizard",
-    "desc": "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more."
+    "desc": "Wizards are supreme magic-users, defined and united as a class by the spells they cast. Drawing on the subtle weave of magic that permeates the cosmos, wizards cast spells of explosive fire, arcing lightning, subtle deception, brute-force mind control, and much more.",
+    "saving_throw_profs": ["int", "wis"],
+    "skill_profs": ["arcana", "history", "insight", "investigation", "medicine", "religion"],
+    "weapon_profs": ["dagger", "dart", "sling", "quarterstaff", "light_crossbow"],
+    "armor_profs": [],
+    "tool_profs": [],
+    "spell_casting_ability": "int",
+    "starting_equip": []
   }
 ]

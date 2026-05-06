@@ -9,10 +9,10 @@ from .game_constants import AbilityType, ClassType, _CLASSES_JSON_FILE_PATH, Wea
 class CreatureClass:
     def __init__(self, class_type: ClassType):
         self.type = class_type
-        self.hit_dice = class_type.hit_dice
+        self.name = self.type.label
+        self.hit_dice = self.type.hit_dice
         self.desc = None
-        self.hit_dice_pool_qty = None
-        self.proficiency_bonus = None
+        self.hit_dice_pool_qty = None  # hit dice are class specific
         self.armor_proficiencies = None
         self.weapon_proficiencies = None
         self.tool_proficiencies = None

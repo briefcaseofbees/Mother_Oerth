@@ -3,9 +3,10 @@ houses code pertaining to the mechanical aspects of creatures-- includes creatur
 creature-classes, creature-metadata, etc.
 """
 
-import math
 import json
-from .game_constants import AbilityType, ConditionType, _CR_XP_TABLE, _CREATURES_JSON_FILE_PATH, SkillType, AlignmentType
+from .game_constants import AbilityType, AlignmentType, ConditionType, SkillType
+from .game_constants import _CR_XP_TABLE, _CREATURES_JSON_FILE_PATH
+from .program_mechanic import extract_data
 
 
 class CreatureCondition:
@@ -54,6 +55,7 @@ class Creature:
         # health
         self.max_health = None
         self.current_health = None
+        self.hit_dice = []  # total hit dice quantities will be dependent on which class(es) the creature has taken levels in
         self.temporary_health = None
         self.death_saving_throws = False  # whether the creature gets death saving throws or not
 
@@ -78,7 +80,7 @@ class Creature:
         self.metadata = CreatureMetadata()
 
         if creature_name is not None:  # if creature name is provided from the get-go, just build it
-            self.extract_data(creature_name)
+            self.populate_object(creature_name)
 
     @property
     def proficiency_bonus(self):
@@ -122,18 +124,21 @@ class Creature:
     def remove_condition(self, condition:ConditionType):
         self.current_conditions.remove(condition)
 
-    def extract_data(self, creature_name:str, file_override:str=None):
+    def populate_object(self, creature_name:str):
 
-        if file_override is not None:  # allows for specific directing towards a different file
-            with open(file_override, "r") as creature_raw_file:
-                creature_dict = json.load(creature_raw_file)
-        else:  # otherwise, pull from the general file
-            with open(_CREATURES_JSON_FILE_PATH, "r") as creature_raw_file:
-                creature_dict = json.load(creature_raw_file)
+        creature_dict = extract_data(_CREATURES_JSON_FILE_PATH)
+
+        relevant_entry = None
 
         for entry in creature_dict:
-            if entry["name"] == creature_name:
+            if entry['name'] == creature_name:
                 relevant_entry = entry
+
+        if relevant_entry is None:
+            print(f"Creature {creature_name} not found in JSON file")
+        else:
+            print(f"Creature {creature_name} found in JSON file")
+
 
     def display_info(self):
         for attribute, value in self.__dict__.items():
