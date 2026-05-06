@@ -3,7 +3,7 @@
 """
 
 import math
-from .game_constants import SkillType, SkillProficiencyType, AbilityType
+from .game_constants import AbilityType, SkillType, SkillProficiencyType
 
 
 class Ability:
