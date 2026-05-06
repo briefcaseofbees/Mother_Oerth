@@ -24,7 +24,7 @@ class PlayerCharacter:
         self.player_name = player_username
         self.player_id = player_id
 
-        self.player_creature = Creature("resources/default_player.json")
+        self.player_creature = Creature("data/default_player.json")
         self.player_abilities = [Ability(ability_type=ability_type, ability_score=10, proficiency_bonus=2) for ability_type in AbilityType]
         self.player_classes = []
         self.player_hit_dice = []

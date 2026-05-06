@@ -13,7 +13,7 @@ class Ability:
                  proficiency_bonus:int = None):
         """
         Abilities in D&D are the foundational scores that dictate nearly every aspect of play, they are numeric
-        representations of physical and mental attributes. They are better described in the SRD in the resources
+        representations of physical and mental attributes. They are better described in the SRD in the data
         directory.
 
         :param ability_type: AbilityType enum (str, dex, con, int, wis, cha)

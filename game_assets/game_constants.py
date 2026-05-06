@@ -1060,12 +1060,14 @@ class WeaponType(enum.Enum):
 
 
 """FILE PATH CONSTANTS"""
-_ADVENTURING_GEAR_JSON_FILE_PATH    = "./resources/adventuring_gear.json"
-_ARMORS_JSON_FILE_PATH              = "./resources/armors.json"
-_CLASSES_JSON_FILE_PATH             = "./resources/classes.json"
-_CREATURES_JSON_FILE_PATH           = "./resources/creatures.json"
-_SPELLS_JSON_FILE_PATH              = "./resources/spells.json"
-_WEAPONS_JSON_FILE_PATH             = "./resources/weapons.json"
+_DATA_DIRECTORY = "../data/"
+
+_ADVENTURING_GEAR_JSON_FILE_PATH    = f"{_DATA_DIRECTORY}adventuring_gear.json"
+_ARMORS_JSON_FILE_PATH              = f"{_DATA_DIRECTORY}armors.json"
+_CLASSES_JSON_FILE_PATH             = f"{_DATA_DIRECTORY}classes.json"
+_CREATURES_JSON_FILE_PATH           = f"{_DATA_DIRECTORY}creatures.json"
+_SPELLS_JSON_FILE_PATH              = f"{_DATA_DIRECTORY}spells.json"
+_WEAPONS_JSON_FILE_PATH             = f"{_DATA_DIRECTORY}weapons.json"
 
 
 """LOOKUP TABLE CONSTANTS"""

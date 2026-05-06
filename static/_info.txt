@@ -1,0 +1,7 @@
+this directory contains all client-side files...
+
+index.html: <description of what this file does>
+
+client.js: <description of what this file does>
+
+style.css: <description of what this file does>

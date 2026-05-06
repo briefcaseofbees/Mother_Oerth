@@ -1,0 +1,4 @@
+this directory contains all the raw data from the SRD_CC_v5.2.1.pdf in JSON format
+this storehouse of data is still being populated
+
+each file pertains to a specific category of information

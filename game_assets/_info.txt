@@ -1,0 +1,4 @@
+this directory contains all the game asset files
+
+a description of each file in this .txt file would be cumbersome, please read the doc strings at the top of each .py
+file if you would like to learn more about what each file does
