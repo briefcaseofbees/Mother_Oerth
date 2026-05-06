@@ -955,6 +955,7 @@ class TriggerType(enum.Enum):
     on_temp_hp_gained = enum.auto()
     on_condition_applied = enum.auto()
     on_condition_removed = enum.auto()
+    on_xp_gained = enum.auto()
     on_level_up = enum.auto()
     on_ability_score_change = enum.auto()
     on_exhaustion_gained = enum.auto()

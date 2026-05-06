@@ -10,9 +10,9 @@ class CreatureClass:
     def __init__(self, class_type: ClassType):
         self.type = class_type
         self.name = self.type.label
-        self.hit_dice = self.type.hit_dice
+        self.class_level = 1
+        self.hit_dice = self.type.hit_dice  # number of hit dice corresponds to levels taken in class
         self.desc = None
-        self.hit_dice_pool_qty = None  # hit dice are class specific
         self.armor_proficiencies = None
         self.weapon_proficiencies = None
         self.tool_proficiencies = None
@@ -27,9 +27,8 @@ class CreatureClass:
         self.spells_known = []
         self.prepared_spells = []   # subset of known spells
         self.spellcasting_ability = None
-        self.concentrating = False  # whether class is concentrating on a spell currently
 
-    def extract_data(self):
+    def populate_object(self):
 
         # open the json file and load the dictionary with all the class entries
         with open(_CLASSES_JSON_FILE_PATH) as classes_file:
