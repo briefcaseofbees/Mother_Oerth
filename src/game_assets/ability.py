@@ -80,7 +80,7 @@ class Ability:
         self.score_modifiers.remove(modifier)
         self.calculate_modifier()
 
-    def calculate_total_score(self):
+    def calculate_ability_total_score(self):
         """
         calculates the total score of the ability (base + score increases)
         """
@@ -91,7 +91,7 @@ class Ability:
         recalculates the ability's total score, then recalculates the ability modifier, then recalculates the skill
         scores associated with the ability
         """
-        self.calculate_total_score()
+        self.calculate_ability_total_score()
         self.modifier = math.floor(float(self.total_score) - 10 / 2)
         self.recalculate_associated_skill_scores(self.modifier)
 
@@ -103,7 +103,7 @@ class Ability:
         """
         for skill in self.associated_skills:
             skill.set_base_score(ability_score_modifier=self.modifier)
-            skill.calculate_total_score()
+            skill.calculate_skill_total_score()
 
 
 class Skill:
@@ -132,7 +132,7 @@ class Skill:
         if ability_score_modifier:
             self.set_base_score(ability_score_modifier)
 
-        self.calculate_total_score()
+        self.calculate_skill_total_score()
 
     def set_base_score(self, ability_score_modifier: int):
         """
@@ -167,16 +167,16 @@ class Skill:
         adds a specific modifier to the skill's total score
         """
         self.score_modifiers.append(modifier)
-        self.calculate_total_score()
+        self.calculate_skill_total_score()
 
     def remove_score_modifier(self, modifier: int):
         """
         removes a specific modifier to the skill's total score
         """
         self.score_modifiers.remove(modifier)
-        self.calculate_total_score()
+        self.calculate_skill_total_score()
 
-    def calculate_total_score(self):
+    def calculate_skill_total_score(self):
         """
         calculates the total score of the skill (base + score modifiers)
         """
