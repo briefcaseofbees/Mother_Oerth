@@ -50,7 +50,7 @@ class ActionCostType(enum.Enum):
 
 
 class ActionType(enum.Enum):
-    # all of these cost ActionEconomy.action
+    # all of these cost ActionCostType.action
     attack          = {"label": "Attack"}      # attack with a weapon, or unarmed strike
     dash            = {"label": "Dash"}        # doubles movement speed
     disengage       = {"label": "Disengage"}   # prevents opportunity attacks

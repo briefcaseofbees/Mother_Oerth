@@ -34,20 +34,20 @@ class CreatureClass:
         with open(_CLASSES_JSON_FILE_PATH) as classes_file:
             classes_dict = json.load(classes_file)
 
-        corresponding_class = None
+        corresponding_entry = None
 
         # of all the class entries in the class dictionary, we need to pinpoint the correct one
-        for class_entry in classes_dict:
-            if class_entry["name"] == self.type.name:  # entry key "name" is encoded with the same name as ClassType
-                corresponding_class = class_entry
+        for entry in classes_dict:
+            if entry["name"] == self.type.name:  # entry key "name" is encoded with the same name as ClassType
+                corresponding_entry = entry
 
-        if corresponding_class is None:
+        if corresponding_entry is None:
             print(f"A corresponding class matching with {self.type.label} was not found!")
             print("Exiting...")
             return  # should throw an error
 
-        self.desc = corresponding_class["desc"]
-        self.saving_throws = [AbilityType[saving_throw_attribute] for saving_throw_attribute in corresponding_class["saving_throw_profs"]]
-        self.weapon_proficiencies = [WeaponType[weapon_type] for weapon_type in corresponding_class["weapon_profs"]]
-        self.armor_proficiencies = [ArmorType[armor_type] for armor_type in corresponding_class["armor_profs"]]
-        self.tool_proficiencies = [ToolProficiencyType[tool_type] for tool_type in corresponding_class["tool_profs"]]
+        self.desc = corresponding_entry["desc"]
+        self.saving_throws = [AbilityType[saving_throw_attribute] for saving_throw_attribute in corresponding_entry["saving_throw_profs"]]
+        self.weapon_proficiencies = [WeaponType[weapon_type] for weapon_type in corresponding_entry["weapon_profs"]]
+        self.armor_proficiencies = [ArmorType[armor_type] for armor_type in corresponding_entry["armor_profs"]]
+        self.tool_proficiencies = [ToolProficiencyType[tool_type] for tool_type in corresponding_entry["tool_profs"]]

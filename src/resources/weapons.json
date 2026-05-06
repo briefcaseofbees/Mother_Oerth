@@ -2,6 +2,7 @@
   {
     "name": "Unarmed Strike",
     "type": ["simple", "melee"],
+    "tags": ["unarmed_strike"],
     "dmg": {"die": "1d1", "type": "bludgeoning"},
     "properties": [],
     "mastery": "",
@@ -11,6 +12,7 @@
   {
     "name": "Club",
     "type": ["simple","melee"],
+    "tags": ["club"],
     "dmg": {"die": "1d4", "type": "bludgeoning"},
     "properties": ["light"],
     "mastery": "slow",
@@ -20,6 +22,7 @@
   {
     "name": "Dagger",
     "type": ["simple","melee"],
+    "tags": ["dagger"],
     "dmg": {"die": "1d4", "type": "piercing"},
     "properties": ["finesse","light","thrown (20/60)"],
     "mastery": "nick",
@@ -29,6 +32,7 @@
   {
     "name": "Greatclub",
     "type": ["simple","melee"],
+    "tags": ["greatclub"],
     "dmg": {"die": "1d8", "type": "bludgeoning"},
     "properties": ["two_handed"],
     "mastery": "push",
@@ -38,6 +42,7 @@
   {
     "name": "Handaxe",
     "type": ["simple","melee"],
+    "tags": ["handaxe"],
     "dmg": {"die": "1d6", "type": "slashing"},
     "properties": ["light", "thrown (20/60)"],
     "mastery": "vex",
@@ -47,6 +52,7 @@
   {
     "name": "Javelin",
     "type": ["simple","melee"],
+    "tags": ["javelin"],
     "dmg": {"die": "1d6", "type": "piercing"},
     "properties": ["thrown (30/120)"],
     "mastery": "slow",
@@ -56,6 +62,7 @@
   {
     "name": "Light Hammer",
     "type": ["simple","melee"],
+    "tags": ["light_hammer"],
     "dmg": {"die": "1d4", "type": "bludgeoning"},
     "properties": ["light", "thrown (20/60)"],
     "mastery": "nick",
@@ -65,6 +72,7 @@
   {
     "name": "Mace",
     "type": ["simple","melee"],
+    "tags": ["mace"],
     "dmg": {"die": "1d6", "type": "bludgeoning"},
     "properties": [],
     "mastery": "sap",
@@ -74,6 +82,7 @@
   {
     "name": "Quarterstaff",
     "type": ["simple","melee"],
+    "tags": ["quarterstaff"],
     "dmg": {"die": "1d6", "type": "bludgeoning"},
     "properties": ["versatile (1d8)"],
     "mastery": "topple",
@@ -83,6 +92,7 @@
   {
     "name": "Sickle",
     "type": ["simple","melee"],
+    "tags": ["sickle"],
     "dmg": {"die": "1d4", "type": "slashing"},
     "properties": ["light"],
     "mastery": "nick",
@@ -92,6 +102,7 @@
   {
     "name": "Spear",
     "type": ["simple","melee"],
+    "tags": ["spear"],
     "dmg": {"die": "1d6", "type": "piercing"},
     "properties": ["thrown (20/60)", "versatile (1d8)"],
     "mastery": "sap",
@@ -101,6 +112,7 @@
   {
     "name": "Dart",
     "type": ["simple","ranged"],
+    "tags": ["dart"],
     "dmg": {"die": "1d4", "type": "piercing"},
     "properties": ["finesse", "thrown (20/60)"],
     "mastery": "vex",
@@ -110,6 +122,7 @@
   {
     "name": "Light Crossbow",
     "type": ["simple","ranged"],
+    "tags": ["light_crossbow"],
     "dmg": {"die": "1d8", "type": "piercing"},
     "properties": ["ammunition (80/320) (bolt)", "loading", "two_handed"],
     "mastery": "slow",
@@ -119,6 +132,7 @@
   {
     "name": "Shortbow",
     "type": ["simple","ranged"],
+    "tags": ["shortbow"],
     "dmg": {"die": "1d6", "type": "piercing"},
     "properties": ["ammunition (80/320) (arrow)", "two_handed"],
     "mastery": "vex",
@@ -128,6 +142,7 @@
   {
     "name": "Sling",
     "type": ["simple","ranged"],
+    "tags": ["sling"],
     "dmg": {"die": "1d4", "type": "bludgeoning"},
     "properties": ["ammunition (30/120) (bullet_sling)"],
     "mastery": "slow",
@@ -137,6 +152,7 @@
   {
     "name": "Battleaxe",
     "type": ["martial","melee"],
+    "tags": ["battleaxe"],
     "dmg": {"die": "1d8", "type": "slashing"},
     "properties": ["versatile (1d10)"],
     "mastery": "topple",
@@ -146,6 +162,7 @@
   {
     "name": "Flail",
     "type": ["martial","melee"],
+    "tags": ["flail"],
     "dmg": {"die": "1d8", "type": "bludgeoning"},
     "properties": [],
     "mastery": "sap",
@@ -155,6 +172,7 @@
   {
     "name": "Glaive",
     "type": ["martial","melee"],
+    "tags": ["glaive"],
     "dmg": {"die": "1d10", "type": "slashing"},
     "properties": ["heavy", "reach", "two_handed"],
     "mastery": "graze",
@@ -164,6 +182,7 @@
   {
     "name": "Greataxe",
     "type": ["martial","melee"],
+    "tags": ["greataxe"],
     "dmg": {"die": "1d12", "type": "slashing"},
     "properties": ["heavy", "two_handed"],
     "mastery": "cleave",
@@ -173,6 +192,7 @@
   {
     "name": "Greatsword",
     "type": ["martial","melee"],
+    "tags": ["greatsword"],
     "dmg": {"die": "2d6", "type": "slashing"},
     "properties": ["heavy", "two_handed"],
     "mastery": "graze",
@@ -182,6 +202,7 @@
   {
     "name": "Halberd",
     "type": ["martial","melee"],
+    "tags": ["halberd"],
     "dmg": {"die": "1d10", "type": "slashing"},
     "properties": ["heavy", "reach", "two_handed"],
     "mastery": "cleave",
@@ -191,6 +212,7 @@
   {
     "name": "Lance",
     "type": ["martial","melee"],
+    "tags": ["lance"],
     "dmg": {"die": "1d10", "type": "piercing"},
     "properties": ["heavy", "reach", "two_handed (unless mounted)"],
     "mastery": "topple",
@@ -200,6 +222,7 @@
   {
     "name": "Longsword",
     "type": ["martial","melee"],
+    "tags": ["longsword"],
     "dmg": {"die": "1d8", "type": "slashing"},
     "properties": ["versatile (1d10)"],
     "mastery": "sap",
@@ -209,6 +232,7 @@
   {
     "name": "Maul",
     "type": ["martial","melee"],
+    "tags": ["maul"],
     "dmg": {"die": "2d6", "type": "bludgeoning"},
     "properties": ["heavy", "two_handed"],
     "mastery": "topple",
@@ -218,6 +242,7 @@
   {
     "name": "Morningstar",
     "type": ["martial","melee"],
+    "tags": ["morningstar"],
     "dmg": {"die": "1d8", "type": "bludgeoning"},
     "properties": [],
     "mastery": "sap",
@@ -227,6 +252,7 @@
   {
     "name": "Pike",
     "type": ["martial","melee"],
+    "tags": ["pike"],
     "dmg": {"die": "1d10", "type": "piercing"},
     "properties": ["heavy", "reach", "two_handed"],
     "mastery": "push",
@@ -236,6 +262,7 @@
   {
     "name": "Rapier",
     "type": ["martial","melee"],
+    "tags": ["rapier"],
     "dmg": {"die": "1d8", "type": "piercing"},
     "properties": ["finesse"],
     "mastery": "vex",
@@ -245,6 +272,7 @@
   {
     "name": "Scimitar",
     "type": ["martial","melee"],
+    "tags": ["scimitar"],
     "dmg": {"die": "1d6", "type": "slashing"},
     "properties": ["finesse", "light"],
     "mastery": "nick",
@@ -254,6 +282,7 @@
   {
     "name": "Shortsword",
     "type": ["martial","melee"],
+    "tags": ["shortsword"],
     "dmg": {"die": "1d6", "type": "piercing"},
     "properties": ["finesse", "light"],
     "mastery": "vex",
@@ -263,6 +292,7 @@
   {
     "name": "Trident",
     "type": ["martial","melee"],
+    "tags": ["trident"],
     "dmg": {"die": "1d8", "type": "piercing"},
     "properties": ["thrown (20/60)", "versatile (1d10)"],
     "mastery": "topple",
@@ -272,6 +302,7 @@
   {
     "name": "Warhammer",
     "type": ["martial","melee"],
+    "tags": ["warhammer"],
     "dmg": {"die": "1d8", "type": "bludgeoning"},
     "properties": ["versatile (1d10)"],
     "mastery": "push",
@@ -281,6 +312,7 @@
   {
     "name": "War Pick",
     "type": ["martial","melee"],
+    "tags": ["war_pick"],
     "dmg": {"die": "1d8", "type": "piercing"},
     "properties": ["versatile (1d10)"],
     "mastery": "sap",
@@ -290,6 +322,7 @@
   {
     "name": "Whip",
     "type": ["martial","melee"],
+    "tags": ["whip"],
     "dmg": {"die": "1d4", "type": "slashing"},
     "properties": ["finesse", "reach"],
     "mastery": "slow",
@@ -299,6 +332,7 @@
   {
     "name": "Blowgun",
     "type": ["martial","ranged"],
+    "tags": ["blowgun"],
     "dmg": {"die": "1d1", "type": "piercing"},
     "properties": ["ammunition (25/100) (needle)", "loading"],
     "mastery": "vex",
@@ -308,6 +342,7 @@
   {
     "name": "Hand Crossbow",
     "type": ["martial","ranged"],
+    "tags": ["hand_crossbow"],
     "dmg": {"die": "1d6", "type": "piercing"},
     "properties": ["ammunition (30/120) (bolt)", "light", "loading"],
     "mastery": "vex",
@@ -317,6 +352,7 @@
   {
     "name": "Heavy Crossbow",
     "type": ["martial","ranged"],
+    "tags": ["heavy_crossbow"],
     "dmg": {"die": "1d10", "type": "piercing"},
     "properties": ["ammunition (100/400) (bolt)", "heavy", "loading", "two_handed"],
     "mastery": "push",
@@ -326,6 +362,7 @@
   {
     "name": "Longbow",
     "type": ["martial","ranged"],
+    "tags": ["longbow"],
     "dmg": {"die": "1d8", "type": "piercing"},
     "properties": ["ammunition (150/600) (arrow)", "heavy", "two_handed"],
     "mastery": "slow",
@@ -335,6 +372,7 @@
   {
     "name": "Musket",
     "type": ["martial","ranged"],
+    "tags": ["musket", "firearm"],
     "dmg": {"die": "1d12", "type": "piercing"},
     "properties": ["ammunition (40/120) (bullet_firearm)", "loading", "two_handed"],
     "mastery": "slow",
@@ -344,6 +382,7 @@
   {
     "name": "Pistol",
     "type": ["martial","ranged"],
+    "tags": ["pistol", "firearm"],
     "dmg": {"die": "1d10", "type": "piercing"},
     "properties": ["ammunition (30/90) (bullet_firearm)", "loading"],
     "mastery": "vex",
