@@ -1,4 +1,4 @@
-from .ability import CreatureSkill
+from .ability import Skill
 from .alignment import KarmicState
 from .classes import CreatureClass
 from .combat import Combatant, CombatQueue, is_encounter_balanced
@@ -14,7 +14,7 @@ from .program_mechanic import extract_data, EventBus
 from .spellcasting import Spell, SpellBook, SpellList
 
 __all__ = [
-    "CreatureSkill",
+    "Skill",
     "KarmicState",
     "CreatureClass",
     "Combatant",

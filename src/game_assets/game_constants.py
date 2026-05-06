@@ -30,7 +30,7 @@ class AbilityType(enum.Enum):
         return self.value["label"]
 
     @property
-    def associated_skills(self):
+    def associated_skills(self) -> list:
         associated_skills = []
         for skill, ability_type in _SKILL_TO_ABILITY_MAPPING.items():
             if self == ability_type:

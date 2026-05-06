@@ -135,15 +135,6 @@ class Creature:
             if entry["name"] == creature_name:
                 relevant_entry = entry
 
-    def calculate_modifiers(self):
-
-        self.modifiers = {  AbilityType.str: math.floor(float(self.ability_scores["str"])-10/2),
-                            AbilityType.dex: math.floor(float(self.ability_scores["dex"])-10/2),
-                            AbilityType.con: math.floor(float(self.ability_scores["con"])-10/2),
-                            AbilityType.int: math.floor(float(self.ability_scores["int"])-10/2),
-                            AbilityType.wis: math.floor(float(self.ability_scores["wis"])-10/2),
-                            AbilityType.cha: math.floor(float(self.ability_scores["cha"])-10/2)}
-
     def display_info(self):
         for attribute, value in self.__dict__.items():
             print(f"{attribute}: {value}")
