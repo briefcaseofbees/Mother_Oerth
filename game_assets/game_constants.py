@@ -529,6 +529,12 @@ class ItemRarityType(enum.Enum):
         return self.value["label"]
 
 
+class ItemType(enum.Enum):
+    scroll = {"label": "Scroll"}
+    potion = {"label": "Potion"}
+    poison = {"label": "Poison"}
+
+
 class ItemWeightEnforcementRule(enum.Enum):
     strict = 0  # all items that have a listed weight in SRD count against carrying cap
     strict_gold_ammo = 1  # all items except ammo and gold with listed weight in SRD count against carrying cap
@@ -1033,6 +1039,30 @@ class TriggerType(enum.Enum):
     on_player_disconnect = enum.auto()
 
 
+class VendorMagicalItemOfferings(enum.Enum):
+    poor = enum.auto()
+    humble = enum.auto()
+    moderate = enum.auto()
+    higher = enum.auto()
+    highest = enum.auto()
+
+
+class VendorType(enum.Enum):
+    general_store = enum.auto()
+    weapon_store = enum.auto()
+    armor_store = enum.auto()
+    potion_store = enum.auto()
+    poison_store = enum.auto()
+    scroll_vendor = enum.auto()
+    food_store = enum.auto()
+    clothing_store = enum.auto()
+    musical_instrument_store = enum.auto()
+    jewelry_store = enum.auto()
+    curios_store = enum.auto()
+    junk_store = enum.auto()
+    game_store = enum.auto()
+
+
 class WealthLevel(enum.Enum):
     poor = enum.auto()
     lower_class = enum.auto()
@@ -1317,6 +1347,14 @@ _LVL_XP_TABLE = {
     LevelAdvancement.level_18:  265000,
     LevelAdvancement.level_19:  305000,
     LevelAdvancement.level_20:  355000
+}
+
+_MAGICAL_OFFERINGS_QTY_TABLE = {
+    VendorMagicalItemOfferings.poor: [1, 2],
+    VendorMagicalItemOfferings.humble: [2, 4],
+    VendorMagicalItemOfferings.moderate: [4, 7],
+    VendorMagicalItemOfferings.higher: [7, 10],
+    VendorMagicalItemOfferings.highest: [10, 15]
 }
 
 _OBJECT_MATERIAL_AC_TABLE = {

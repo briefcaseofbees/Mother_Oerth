@@ -2,8 +2,9 @@
 
 """
 
-from .game_constants import CoinType, CreatureAttitude, Reputation, WealthLevel
-
+import random
+from .game_constants import CoinType, CreatureAttitude, Reputation, VendorType, WealthLevel, VendorMagicalItemOfferings
+from .game_constants import _MAGICAL_OFFERINGS_QTY_MAP_TABLE
 
 class CoinPurse:
     def __init__(self):
@@ -83,13 +84,67 @@ class CoinPurse:
 
 class Vendor:
     def __init__(self, wealth_level: WealthLevel):
-        self.vendor_wealth = wealth_level                   # how wealthy the merchant is (will also dictate stock)
-        self.petty_cash = CoinPurse()                           # the coins that the vendor has on their person
+        self.wealth = wealth_level                   # how wealthy the merchant is (will also dictate stock)
+        self.type:list[VendorType] = []              # vendor can have different offerings
+        self.magical_offerings: VendorMagicalItemOfferings | None = None
+        self.petty_cash = CoinPurse()                       # the coins that the vendor has on their person
         self.inventory = []                                 # the physical inventory the vendor has
         self.reputation = Reputation.neutral                # the reputation the player has with the vendor
         self.disposition = CreatureAttitude.indifferent     # the attitude the vendor has towards the player
 
         # need to come up with a way to implement that "barter" option from BG3 with this class...
+
+    def generate_stock(self):
+        """
+
+        """
+
+        # need some way to have some persistent stock between days...? (stock changing daily doesn't make sense)
+
+        generated_inventory = []
+        stock_qty = 0
+        magical_item_qty = None
+
+        """CHECK IF VENDOR HAS MAGICAL ITEMS FOR SALE"""
+        if self.magical_offerings is not None:
+            magical_item_qty = random.randint(_MAGICAL_OFFERINGS_QTY_MAP_TABLE[self.magical_offerings][0],
+                                              _MAGICAL_OFFERINGS_QTY_MAP_TABLE[self.magical_offerings][1])
+
+        """FIGURE OUT HOW MANY ITEMS ARE IN STOCK"""
+        for vendor_type in self.type:
+            if self.wealth == WealthLevel.poor:
+                stock_qty = random.randint(3, 5)
+            elif self.wealth == WealthLevel.lower_class:
+                stock_qty = random.randint(5, 7)
+            elif self.wealth == WealthLevel.middle_class:
+                stock_qty = random.randint(7, 12)
+            elif self.wealth == WealthLevel.upper_class:
+                stock_qty = random.randint(12, 17)
+            elif self.wealth == WealthLevel.rich:
+                stock_qty = random.randint(17, 25)
+            else:
+                stock_qty = 2
+
+        """BEFORE PICKING MUNDANE ITEMS IN STOCK, PICK MAGICAL ITEMS FROM VENDOR TYPE CATEGORIES"""
+        if magical_item_qty is not None:
+            magical_item_pick = None
+            # pick a magical item from vendor type categories
+            while magical_item_qty > 0:
+
+                # pick a random category in VendorType to choose magical item from
+                vendor_type_pick = random.choice(self.type)
+
+                # pick a random magical item that falls in that VendorType category
+                magical_item_pick = None  # this is where the code will go for polling for magical items in categories
+
+                generated_inventory.append(magical_item_pick)
+                magical_item_qty -= 1   # decrement magical item qty
+                stock_qty -= 1          # decrement stock qty (counts against stock count as well)
+
+        """PICK REST OF STOCK FROM VENDOR TYPE CATEGORIES"""
+
+
+        self.inventory = generated_inventory
 
     def purchase_item(self):
         pass
@@ -109,3 +164,10 @@ class Vendor:
         # because coins WEIGH something, money changing is actually a very valuable service...
 
         pass
+
+
+def generate_loot_pool(wealth_level: WealthLevel):
+
+    # create a list of items that corresponds with a particular level of wealth
+
+    pass
