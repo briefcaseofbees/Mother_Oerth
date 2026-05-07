@@ -7,6 +7,25 @@ from .game_constants import AlignmentType, _STARTING_ALIGNMENT_COORDINATES_TABLE
 
 class KarmicState:
     def __init__(self, starting_alignment:AlignmentType):
+        """
+        KarmicState is a unique game construct that is not present in the SRD, it seeks to solve the issues surrounding
+        alignment in D&D. Firstly, it turns the normally rigid and discrete alignment system into a spectrum/range that
+        has coordinates in the canon alignment system. Second, it implements "inertia" which is a concept by which actions
+        that alter a character's alignment (e.g. a neutral character doing a morally "good" act) can be magnified or
+        made smaller by nature of previous karmic actions.
+
+        For example, a purely "Good" character that has a long history of good actions will not instantly swap to a
+        "neutral" or "evil" alignment by one bad deed alone, but rather the distance by which the bad action will shift
+        the normally good character towards neutrality/evil will be weighed against the inertia that has been gained
+        through the history of the character's good actions.
+
+        This has two benefits:
+        1. Character arcs of a long-standing evil character becoming good, or vice versa will be made longer/meaningful.
+        2. No longer will alignment swapping be instantaneous and undeserved, a "Good" character will not be punished
+        for a lapse in judgement when they've had history of do-good behaviour.
+
+        :param starting_alignment: AlignmentType
+        """
         self.good_evil = 0.0  # range: [-1, 1] (evil, good)
         self.law_chaos = 0.0  # range: [-1, 1] (chaotic, lawful)
         self.good_evil_inertia = 0.0  # 0.0 to 1.0 - resistance to change in good/evil
