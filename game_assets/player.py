@@ -8,6 +8,7 @@ from .ability import Ability
 from .alignment import KarmicState
 from .creature import Creature
 from .dice import roll_ability_scores
+from .economy import Coins
 from .game_constants import AbilityType, AbilityScoreMethod, ClassType, LevelAdvancement
 from .game_constants import _CLASSES_JSON_FILE_PATH, _LVL_PROF_BONUS_TABLE, _LVL_XP_TABLE
 from .program_mechanic import extract_data
@@ -34,6 +35,7 @@ class PlayerCharacter:
         self.total_player_level = LevelAdvancement.level_1
         self.proficiency_bonus = _LVL_PROF_BONUS_TABLE[self.total_player_level]  # player proficiency bonus comes directly from total player level (sum of all class levels taken)
 
+        self.coin_purse = Coins()
         self.player_karmic_state = KarmicState(self.player_creature.alignment)
         self.spellbook = None  # spellcaster specific, very-much a player concern (not stored in Creature class)
 

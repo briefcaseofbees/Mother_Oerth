@@ -163,6 +163,12 @@ class CoinType(enum.Enum):
     gp = {"label_short": "GP", "label_long": "Gold Piece(s)", "value": 100}
     pp = {"label_short": "PP", "label_long": "Platinum Piece(s)", "value": 1000}
 
+    def label(self, short_form: bool = False):
+        if short_form:
+            return self.value["label_short"]
+        else:
+            return self.value["label_long"]
+
 
 class CombatBehaviour(enum.Enum):
     # poles of combat behaviour
@@ -1013,6 +1019,14 @@ class TriggerType(enum.Enum):
     on_player_disconnect = enum.auto()
 
 
+class WealthLevel(enum.Enum):
+    poor = enum.auto()
+    lower_class = enum.auto()
+    middle_class = enum.auto()
+    upper_class = enum.auto()
+    rich = enum.auto()
+
+
 class WeaponMasteryType(enum.Enum):
     cleave      = {"label": "Cleave"}
     graze       = {"label": "Graze"}
@@ -1372,6 +1386,14 @@ _STARTING_ALIGNMENT_COORDINATES_TABLE = {
     AlignmentType.le: (0.66, -0.66),
     AlignmentType.ne: (0.0, -0.66),
     AlignmentType.ce: (-0.66, -0.66),
+}
+
+_WEALTH_TABLE = {
+    WealthLevel.poor: "",
+    WealthLevel.lower_class: "",
+    WealthLevel.middle_class: "",
+    WealthLevel.upper_class: "",
+    WealthLevel.rich: ""
 }
 
 """OPTIONAL RULES CONSTANTS"""
