@@ -4,7 +4,7 @@ from .classes import CreatureClass
 from .combat import Combatant, CombatQueue, is_encounter_balanced
 from .creature import Creature, CreatureCondition, CreatureMetadata
 from .dice import Dice, resolve_multiple_d20modifiers, d20_test, roll_ability_scores
-from .economy import Coins
+from .economy import CoinPurse
 from .gametime import GameTime
 from .item import Weapon, Armor, AdventuringTool
 from .map import Map, MapSquare
@@ -27,7 +27,7 @@ __all__ = [
     "resolve_multiple_d20modifiers",
     "d20_test",
     "roll_ability_scores",
-    "Coins",
+    "CoinPurse",
     "GameTime",
     "Weapon",
     "Armor",

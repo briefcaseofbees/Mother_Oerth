@@ -833,6 +833,15 @@ class SpellRangeType(enum.Enum):
     distance = 2
 
 
+class TagType(enum.Enum):
+    """
+    INCOMPLETE: TagType covers the closed set of categories that the Tag class (in tag.py) can fall under...
+    """
+    identity = enum.auto()              # covers race, class, organization
+    weapon_proficiency = enum.auto()
+    armor_proficiency = enum.auto()
+
+
 class TimeOfDay(enum.Enum):
     dead_of_night = {"label": "Dead of Night", "stealth_bonus": 2, "npc_activity": "asleep"}  # 12am - 3am
     twilight =      {"label": "Twilight", "stealth_bonus": 1, "npc_activity": "asleep"}  # 3am - 6am
@@ -995,11 +1004,16 @@ class TriggerType(enum.Enum):
     on_creature_flees = enum.auto()
 
     # EXPLORATION/NARRATIVE
+    on_player_seen = enum.auto()
+    on_player_talk = enum.auto()
     on_room_enter = enum.auto()
     on_room_exit = enum.auto()
     on_item_found = enum.auto()
     on_trap_triggered = enum.auto()
+    on_trap_disarmed = enum.auto()
     on_door_opened = enum.auto()
+    on_door_closed = enum.auto()
+    on_door_unlocked = enum.auto()
     on_npc_interaction = enum.auto()
     on_quest_updated = enum.auto()
     on_quest_completed = enum.auto()

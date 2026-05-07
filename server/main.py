@@ -9,7 +9,7 @@ if __name__ == "__main__":
     # uvicorn.run(app, host="0.0.0.0", port=8000)
     pass
 
-    test_coin_purse = Coins()
+    test_coin_purse = CoinPurse()
     test_coin_purse.add_to_coin_purse("75 SP")
     test_coin_purse.add_to_coin_purse(["5 CP", "75 SP", "11 EP", "100 PP"])
     test_coin_purse.display_coin_totals()

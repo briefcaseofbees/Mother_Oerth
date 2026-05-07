@@ -8,11 +8,11 @@ from .ability import Ability
 from .alignment import KarmicState
 from .creature import Creature
 from .dice import roll_ability_scores
-from .economy import Coins
+from .economy import CoinPurse
 from .game_constants import AbilityType, AbilityScoreMethod, ClassType, LevelAdvancement
 from .game_constants import _CLASSES_JSON_FILE_PATH, _LVL_PROF_BONUS_TABLE, _LVL_XP_TABLE
 from .program_mechanic import extract_data
-
+from .tag import Tag
 
 class PlayerCharacter:
     def __init__(self, player_username:str, player_id: int):
@@ -35,17 +35,45 @@ class PlayerCharacter:
         self.total_player_level = LevelAdvancement.level_1
         self.proficiency_bonus = _LVL_PROF_BONUS_TABLE[self.total_player_level]  # player proficiency bonus comes directly from total player level (sum of all class levels taken)
 
-        self.coin_purse = Coins()
+        self.coin_purse = CoinPurse()
+        self.player_tags = []  # player tags will be a list of Tag
         self.player_karmic_state = KarmicState(self.player_creature.alignment)
         self.spellbook = None  # spellcaster specific, very-much a player concern (not stored in Creature class)
 
-    def check_xp(self):
-        # TriggerType.on_xp_gained: whenever xp is gained by a player, it should check if they leveled up
+    def add_coins(self, coin_amount: str | list[str]):
+        self.coin_purse.add_to_coin_purse(coin_amount)
 
+    def remove_coins(self, coin_amount: str | list[str]):
+        self.coin_purse.remove_from_purse(coin_amount)
+
+    def check_inspiration(self):
+        return self.inspiration
+
+    def gain_inspiration(self):
+        if not self.inspiration:
+            self.inspiration = True
+
+    def use_inspiration(self):
+        if self.inspiration:
+            self.inspiration = False
+
+    def set_tags(self, tags: list[Tag]):
+        self.player_tags = tags
+
+    def add_tag(self, tag: Tag):
+        self.player_tags.append(tag)
+
+    def remove_tag(self, tag: Tag):
+        self.player_tags.remove(tag)
+
+    def add_xp(self, xp_gained:int):
+        self.player_xp += xp_gained
+        self.check_xp()
+
+    def check_xp(self):
         for xp_threshold in _LVL_XP_TABLE:
             # below should cover multiple level ups (if that occurs)
             if xp_threshold[self.total_player_level] <= self.player_xp:
-                # TriggerType.on_level_up
                 self.level_up()
 
     def level_up(self):

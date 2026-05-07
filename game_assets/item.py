@@ -4,7 +4,7 @@
 
 import json
 from .dice import Dice
-from .economy import Coins
+from .economy import CoinPurse
 from .game_constants import AmmoType, ArmorType, DamageType, DieType, _WEAPONS_JSON_FILE_PATH, _ADVENTURING_GEAR_JSON_FILE_PATH, _ARMORS_JSON_FILE_PATH, WeaponMasteryType, WeaponPropertyType
 from .program_mechanic import extract_data
 
@@ -66,7 +66,7 @@ class Weapon:
             self.mastery = WeaponMasteryType[relevant_entry["mastery"]]
             self.weight = relevant_entry["weight"]
 
-            self.cost = Coins.parse(relevant_entry["cost"])
+            self.cost = CoinPurse.parse(relevant_entry["cost"])
 
             # strip properties from dict
             for prop in relevant_entry["properties"]:
@@ -100,7 +100,7 @@ class Armor:
         self.str_req = 0
         self.stealth_disadvantage = False
         self.weight = None
-        self.cost = Coins()
+        self.cost = CoinPurse()
 
         self.populate_object(armor_name)
 

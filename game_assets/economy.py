@@ -5,7 +5,7 @@
 from .game_constants import CoinType, CreatureAttitude, Reputation, WealthLevel
 
 
-class Coins:
+class CoinPurse:
     def __init__(self):
         self.total = {
                         CoinType.cp: 0,
@@ -84,10 +84,18 @@ class Coins:
 class Vendor:
     def __init__(self, wealth_level: WealthLevel):
         self.vendor_wealth = wealth_level                   # how wealthy the merchant is (will also dictate stock)
-        self.petty_cash = Coins()                           # the coins that the vendor has on their person
+        self.petty_cash = CoinPurse()                           # the coins that the vendor has on their person
         self.inventory = []                                 # the physical inventory the vendor has
         self.reputation = Reputation.neutral                # the reputation the player has with the vendor
         self.disposition = CreatureAttitude.indifferent     # the attitude the vendor has towards the player
+
+        # need to come up with a way to implement that "barter" option from BG3 with this class...
+
+    def purchase_item(self):
+        pass
+
+    def sell_item(self):
+        pass
 
     def money_changing_service(self):
         """
