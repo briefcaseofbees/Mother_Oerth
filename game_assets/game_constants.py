@@ -470,6 +470,35 @@ class EquipTimeEnforcementRule(enum.Enum):
     ignored = 2  # equipment can be swapped instantly (BG3)
 
 
+class FactionCharacteristics(enum.Enum):
+    # operational style
+    stealth = enum.auto()
+    subterfuge = enum.auto()
+    open_conflict = enum.auto()
+    diplomacy = enum.auto()
+
+    # domain
+    arcane = enum.auto()
+    divine = enum.auto()
+    nature = enum.auto()
+    criminal = enum.auto()
+    military = enum.auto()
+    mercantile = enum.auto()
+
+    # values
+    order = enum.auto()
+    chaos = enum.auto()
+    isolation = enum.auto()
+    expansion = enum.auto()
+    preservation = enum.auto()
+
+    # disposition
+    xenophobic = enum.auto()
+    inclusive = enum.auto()
+    hierarchical = enum.auto()
+    egalitarian = enum.auto()
+
+
 class FestivalDay(enum.Enum):
     day_1 = {"label": "Low Festival (Starday)"}
     day_2 = {"label": "Low Festival (Sunday)"}
