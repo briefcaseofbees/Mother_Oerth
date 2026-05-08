@@ -5,7 +5,7 @@
 import json
 from .dice import Dice
 from .economy import CoinPurse
-from .game_constants import AmmoType, ArmorType, DamageType, DieType, _WEAPONS_JSON_FILE_PATH, _ADVENTURING_GEAR_JSON_FILE_PATH, _ARMORS_JSON_FILE_PATH, WeaponMasteryType, WeaponPropertyType
+from .game_constants import AmmoType, ArmorType, DamageType, DieType, _ITEMS_JSON_FILE_PATH, WeaponMasteryType, WeaponPropertyType
 from .program_mechanic import extract_data
 
 class Weapon:
@@ -26,7 +26,7 @@ class Weapon:
 
     def populate_object(self, weapon_name:str):
 
-        weapon_dict = extract_data(_WEAPONS_JSON_FILE_PATH)
+        weapon_dict = extract_data(_ITEMS_JSON_FILE_PATH)
 
         relevant_entry = None
 
@@ -106,7 +106,7 @@ class Armor:
 
     def populate_object(self, armor_name:str):
 
-        armor_dict = extract_data(_ARMORS_JSON_FILE_PATH)
+        armor_dict = extract_data(_ITEMS_JSON_FILE_PATH)
 
         relevant_entry = None
 
@@ -146,7 +146,7 @@ class AdventuringTool:
         self.populate_object(adventuring_tool_name)
 
     def populate_object(self, adventuring_tool_name:str):
-        adventuring_tool_dict = extract_data(_ADVENTURING_GEAR_JSON_FILE_PATH)
+        adventuring_tool_dict = extract_data(_ITEMS_JSON_FILE_PATH)
 
         relevant_entry = None
         for entry in adventuring_tool_dict:

@@ -1120,12 +1120,11 @@ class WeaponType(enum.Enum):
 """FILE PATH CONSTANTS"""
 _DATA_DIRECTORY = "../data/"
 
-_ADVENTURING_GEAR_JSON_FILE_PATH    = f"{_DATA_DIRECTORY}adventuring_gear.json"
-_ARMORS_JSON_FILE_PATH              = f"{_DATA_DIRECTORY}armors.json"
+_ITEMS_JSON_FILE_PATH               = f"{_DATA_DIRECTORY}items.json"
 _CLASSES_JSON_FILE_PATH             = f"{_DATA_DIRECTORY}classes.json"
 _CREATURES_JSON_FILE_PATH           = f"{_DATA_DIRECTORY}creatures.json"
 _SPELLS_JSON_FILE_PATH              = f"{_DATA_DIRECTORY}spells.json"
-_WEAPONS_JSON_FILE_PATH             = f"{_DATA_DIRECTORY}weapons.json"
+
 
 
 """LOOKUP TABLE CONSTANTS"""
@@ -1438,6 +1437,23 @@ _STARTING_ALIGNMENT_COORDINATES_TABLE = {
     AlignmentType.le: (0.66, -0.66),
     AlignmentType.ne: (0.0, -0.66),
     AlignmentType.ce: (-0.66, -0.66),
+}
+
+_VENDOR_TYPE_ITEM_MAPPING = {
+    # TODO: populate these lists more thoroughly
+    VendorType.general_store:               ["adventuring_gear"],
+    VendorType.weapon_store:                ["weapon"],
+    VendorType.armor_store:                 ["armor"],
+    VendorType.potion_store:                ["potion"],
+    VendorType.poison_store:                ["poison"],
+    VendorType.scroll_vendor:               ["scroll"],
+    VendorType.food_store:                  ["food"],
+    VendorType.clothing_store:              ["clothing"],
+    VendorType.musical_instrument_store:    ["musical_instrument"],
+    VendorType.jewelry_store:               ["jewelry"],
+    VendorType.curios_store:                ["curios"],
+    VendorType.junk_store:                  ["junk"],
+    VendorType.game_store:                  ["game_set"]
 }
 
 _WEALTH_TABLE = {
