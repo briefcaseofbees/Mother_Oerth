@@ -1,0 +1,1615 @@
+[
+  {
+    "name": "Arrows",
+    "type": ["arrow", "ammo"],
+    "amount": 20,
+    "storage": "quiver",
+    "weight": 1,
+    "cost": "1 GP"
+  },
+  {
+    "name": "Bolts",
+    "type": ["bolt", "ammo"],
+    "amount": 20,
+    "storage": "case",
+    "weight": 1.5,
+    "cost": "1 GP"
+  },
+  {
+    "name": "Bullets, Firearm",
+    "type": ["bullet", "firearm", "ammo"],
+    "amount": 10,
+    "storage": "pouch",
+    "weight": 2,
+    "cost": "3 GP"
+  },
+  {
+    "name": "Bullets, Sling",
+    "type": ["bullet", "sling", "ammo"],
+    "amount": 20,
+    "storage": "pouch",
+    "weight": 1.5,
+    "cost": "4 CP"
+  },
+  {
+    "name": "Needles",
+    "type": ["needle", "ammo"],
+    "amount": 50,
+    "storage": "pouch",
+    "weight": 1,
+    "cost": "1 GP"
+  },
+  {
+    "name": "Padded Armor",
+    "type": ["armor", "light"],
+    "ac": {"num": 11, "dex_mod": true, "max_dex": -1},
+    "str_req": 0,
+    "stealth_disadvantage": true,
+    "weight": 8,
+    "cost": "5 GP"
+  },
+  {
+    "name": "Leather Armor",
+    "type": ["armor", "light"],
+    "ac": {"num": 11, "dex_mod": true, "max_dex": -1},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 10,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Studded Leather Armor",
+    "type": ["armor", "light"],
+    "ac": {"num": 11, "dex_mod": true, "max_dex": -1},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 13,
+    "cost": "45 GP"
+  },
+  {
+    "name": "Hide Armor",
+    "type": ["armor", "medium"],
+    "ac": {"num": 12, "dex_mod": true, "max_dex": 2},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 12,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Chain Shirt",
+    "type": ["armor", "medium"],
+    "ac": {"num": 13, "dex_mod": true, "max_dex": 2},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 20,
+    "cost": "50 GP"
+  },
+  {
+    "name": "Scale Mail",
+    "type": ["armor", "medium"],
+    "ac": {"num": 14, "dex_mod": true, "max_dex": 2},
+    "str_req": 0,
+    "stealth_disadvantage": true,
+    "weight": 45,
+    "cost": "50 GP"
+  },
+  {
+    "name": "Breastplate",
+    "type": ["armor", "medium"],
+    "ac": {"num": 14, "dex_mod": true, "max_dex": 2},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 20,
+    "cost": "400 GP"
+  },
+  {
+    "name": "Half Plate Armor",
+    "type": ["armor", "medium"],
+    "ac": {"num": 15, "dex_mod": true, "max_dex": 2},
+    "str_req": 0,
+    "stealth_disadvantage": true,
+    "weight": 40,
+    "cost": "750 GP"
+  },
+  {
+    "name": "Ring Mail",
+    "type": ["armor", "heavy"],
+    "ac": {"num": 14, "dex_mod": false, "max_dex": 0},
+    "str_req": 0,
+    "stealth_disadvantage": true,
+    "weight": 40,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Chain Mail",
+    "type": ["armor", "heavy"],
+    "ac": {"num": 16, "dex_mod": false, "max_dex": 0},
+    "str_req": 13,
+    "stealth_disadvantage": true,
+    "weight": 55,
+    "cost": "75 GP"
+  },
+  {
+    "name": "Splint Armor",
+    "type": ["armor", "heavy"],
+    "ac": {"num": 17, "dex_mod": false, "max_dex": 0},
+    "str_req": 15,
+    "stealth_disadvantage": true,
+    "weight": 60,
+    "cost": "200 GP"
+  },
+  {
+    "name": "Plate Armor",
+    "type": ["armor", "heavy"],
+    "ac": {"num": 18, "dex_mod": false, "max_dex": 0},
+    "str_req": 15,
+    "stealth_disadvantage": true,
+    "weight": 65,
+    "cost": "1500 GP"
+  },
+  {
+    "name": "Shield",
+    "type": ["armor", "shield"],
+    "ac": {"num": 2, "dex_mod": false, "max_dex": 0},
+    "str_req": 0,
+    "stealth_disadvantage": false,
+    "weight": 6,
+    "cost": "10 GP"
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "alchemist_supplies"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 8,
+    "cost": "50 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "brewer_supplies"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 9,
+    "cost": "20 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "calligrapher_supplies"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "10 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "carpenter_tools"],
+    "ability": ["Strength", "STR"],
+    "weight": 6,
+    "cost": "8 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "cartographer_tools"],
+    "ability": ["Wisdom", "WIS"],
+    "weight": 6,
+    "cost": "15 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "cobbler_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "5 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "cook_utensils"],
+    "ability": ["Wisdom", "WIS"],
+    "weight": 8,
+    "cost": "1 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "glassblower_tools"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 5,
+    "cost": "30 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "jeweler_tools"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 2,
+    "cost": "25 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "leatherworker_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "5 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "mason_tools"],
+    "ability": ["Strength", "STR"],
+    "weight": 8,
+    "cost": "10 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "painter_supplies"],
+    "ability": ["Wisdom", "WIS"],
+    "weight": 5,
+    "cost": "10 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "potter_tools"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 3,
+    "cost": "10 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "smith_tools"],
+    "ability": ["Strength", "STR"],
+    "weight": 8,
+    "cost": "20 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "tinker_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 10,
+    "cost": "50 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "weaver_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "1 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "woodcarver_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "1 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "disguise_kit"],
+    "ability": ["Charisma", "CHA"],
+    "weight": 3,
+    "cost": "25 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "forgery_kit"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 5,
+    "cost": "15 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "gaming_set"],
+    "ability": ["Wisdom", "WIS"],
+    "weight": 0,
+    "cost": "0 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "herbalism_kit"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 3,
+    "cost": "5 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "musical_instrument"],
+    "ability": ["Charisma", "CHA"],
+    "weight": -1,
+    "cost": "0 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "navigator_tools"],
+    "ability": ["Wisdom", "WIS"],
+    "weight": 2,
+    "cost": "25 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "poisoner_kit"],
+    "ability": ["Intelligence", "INT"],
+    "weight": 2,
+    "cost": "50 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "",
+    "type": ["artisan_tools", "thief_tools"],
+    "ability": ["Dexterity", "DEX"],
+    "weight": 1,
+    "cost": "25 GP",
+    "utilize":  [
+                  {"desc": "", "dc": "very_easy"},
+                  {"desc": "", "dc": "medium"}
+                ],
+    "craft": [""]
+  },
+  {
+    "name": "Acid",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "25 GP",
+    "desc": "A vial of acid that can be thrown.",
+    "effects": []
+  },
+  {
+    "name": "Alchemist's Fire",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Antitoxin",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Backpack",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ball Bearings",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Barrel",
+    "type": "adventuring_gear",
+    "weight": 70,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Basket",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "4 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bedroll",
+    "type": "adventuring_gear",
+    "weight": 7,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bell",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Blanket",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Block and Tackle",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Book",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bottle, Glass",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Bucket",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Burglar's Pack",
+    "type": "adventuring_gear",
+    "weight": 42,
+    "cost": "16 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Caltrops",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Candle",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Case, Crossbow Bolt",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Case, (Map/Scroll)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Chain",
+    "type": "adventuring_gear",
+    "weight": 10,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Chest",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Climber's Kit",
+    "type": "adventuring_gear",
+    "weight": 12,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Clothes, Fine",
+    "type": "adventuring_gear",
+    "weight": 6,
+    "cost": "15 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Clothes, Traveler's",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Component Pouch",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Costume",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Crowbar",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Diplomat's Pack",
+    "type": "adventuring_gear",
+    "weight": 39,
+    "cost": "39 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Dungeoneer's Pack",
+    "type": "adventuring_gear",
+    "weight": 55,
+    "cost": "12 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Entertainer's Pack",
+    "type": "adventuring_gear",
+    "weight": 58.5,
+    "cost": "40 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Explorer's Pack",
+    "type": "adventuring_gear",
+    "weight": 55,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Flask",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Grappling Hook",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Healer's Kit",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Holy Water",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "25 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Hunting Trap",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ink",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ink Pen",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Jug",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "2 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ladder",
+    "type": "adventuring_gear",
+    "weight": 25,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lamp",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lantern, Bullseye",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lantern, Hooded",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Lock",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "10 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Magnifying Glass",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "100 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Manacles",
+    "type": "adventuring_gear",
+    "weight": 6,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Map",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Mirror",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Net",
+    "type": "adventuring_gear",
+    "weight": 3,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Oil",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Paper",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Parchment",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Perfume",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "5 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Poison, Basic",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "100 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pole",
+    "type": "adventuring_gear",
+    "weight": 7,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pot, Iron",
+    "type": "adventuring_gear",
+    "weight": 10,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Potion of Healing",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Pouch",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Priest's Pack",
+    "type": "adventuring_gear",
+    "weight": 29,
+    "cost": "33 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Quiver",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Ram, Portable",
+    "type": "adventuring_gear",
+    "weight": 35,
+    "cost": "4 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Rations",
+    "type": "adventuring_gear",
+    "weight": 2,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Robe",
+    "type": "adventuring_gear",
+    "weight": 4,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Rope",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Sack",
+    "type": "adventuring_gear",
+    "weight": 0.5,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Scholar's Pack",
+    "type": "adventuring_gear",
+    "weight": 22,
+    "cost": "40 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Shovel",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Signal Whistle",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "5 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spell Scroll (Cantrip)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "30 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spell Scroll (Level 1)",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "50 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spikes, Iron",
+    "type": "adventuring_gear",
+    "weight": 5,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Spyglass",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1000 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "String",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Tent",
+    "type": "adventuring_gear",
+    "weight": 20,
+    "cost": "2 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Tinderbox",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "5 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Torch",
+    "type": "adventuring_gear",
+    "weight": 1,
+    "cost": "1 CP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Vial",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "1 GP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Waterskin",
+    "type": "adventuring_gear",
+    "weight": 0,
+    "cost": "2 SP",
+    "desc": "",
+    "effects": []
+  },
+  {
+    "name": "Crystal",
+    "type": ["focus", "arcane"],
+    "weight": 1,
+    "desc": "",
+    "cost": "10 GP"
+  },
+  {
+    "name": "Orb",
+    "type": ["focus",  "arcane"],
+    "weight": 3,
+    "desc": "",
+    "cost": "20 GP"
+  },
+  {
+    "name": "Rod",
+    "type": ["focus", "arcane"],
+    "weight": 2,
+    "desc": "",
+    "cost": "10 GP"
+  },
+  {
+    "name": "Staff",
+    "type": ["focus", "arcane"],
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Quarterstaff",
+    "type": ["focus", "arcane"],
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Wand",
+    "type": ["focus", "arcane"],
+    "weight": 1,
+    "desc": "",
+    "cost": "10 GP"
+  },
+  {
+    "name": "Sprig of mistletoe",
+    "type": ["focus", "druidic"],
+    "weight": 0,
+    "desc": "",
+    "cost": "1 GP"
+  },
+  {
+    "name": "Staff (Wood)",
+    "type": ["focus", "druidic"],
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Quarterstaff (Wood)",
+    "type": ["focus", "druidic"],
+    "weight": 4,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Yew Wand",
+    "type": ["focus", "druidic"],
+    "weight": 1,
+    "desc": "",
+    "cost": "10 GP"
+  },
+  {
+    "name": "Amulet",
+    "type": ["focus", "holy_symbol"],
+    "weight": 1,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Emblem",
+    "type": ["focus", "holy_symbol"],
+    "weight": 0,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Reliquary",
+    "type": ["focus", "holy_symbol"],
+    "weight": 2,
+    "desc": "",
+    "cost": "5 GP"
+  },
+  {
+    "name": "Dice",
+    "type": ["gaming_set", "dice"],
+    "cost": "1 SP"
+  },
+  {
+    "name": "Dragonchess",
+    "type": ["gaming_set", "dragonchess"],
+    "cost": "1 GP"
+  },
+  {
+    "name": "Playing Cards",
+    "type": ["gaming_set", "playing_cards"],
+    "cost": "5 SP"
+  },
+  {
+    "name": "Three-Dragon Ante",
+    "type": ["gaming_set", "threedragon_ante"],
+    "cost": "1 GP"
+  },
+  {
+    "name": "Bagpipes",
+    "type": ["musical_instrument", "bagpipes"],
+    "desc": "",
+    "weight": 6,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Drum",
+    "type": ["musical_instrument", "drum"],
+    "desc": "",
+    "weight": 3,
+    "cost": "6 GP"
+  },
+  {
+    "name": "Dulcimer",
+    "type": ["musical_instrument", "dulcimer"],
+    "desc": "",
+    "weight": 10,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Flute",
+    "type": ["musical_instrument", "flute"],
+    "desc": "",
+    "weight": 1,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Horn",
+    "type": ["musical_instrument", "horn"],
+    "desc": "",
+    "weight": 2,
+    "cost": "3 GP"
+  },
+  {
+    "name": "Lute",
+    "type": ["musical_instrument", "lute"],
+    "desc": "",
+    "weight": 2,
+    "cost": "35 GP"
+  },
+  {
+    "name": "Lyre",
+    "type": ["musical_instrument", "lyre"],
+    "desc": "",
+    "weight": 2,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Pan Flute",
+    "type": ["musical_instrument", "pan_flute"],
+    "desc": "",
+    "weight": 2,
+    "cost": "12 GP"
+  },
+  {
+    "name": "Shawm",
+    "type": ["musical_instrument", "shawm"],
+    "desc": "",
+    "weight": 1,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Viol",
+    "type": ["musical_instrument", "viol"],
+    "desc": "",
+    "weight": 1,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Unarmed Strike",
+    "type": ["weapon", "simple" , "melee",  "unarmed_strike"],
+    "dmg": {"die": "1d1", "type": "bludgeoning"},
+    "properties": [],
+    "mastery": "",
+    "weight": 0,
+    "cost": "0 CP"
+  },
+  {
+    "name": "Club",
+    "type": ["weapon", "simple" ,"melee", "club"],
+    "dmg": {"die": "1d4", "type": "bludgeoning"},
+    "properties": ["light"],
+    "mastery": "slow",
+    "weight": 2,
+    "cost": "1 SP"
+  },
+  {
+    "name": "Dagger",
+    "type": ["weapon", "simple" ,"melee", "dagger"],
+    "dmg": {"die": "1d4", "type": "piercing"},
+    "properties": ["finesse","light","thrown (20/60)"],
+    "mastery": "nick",
+    "weight": 1,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Greatclub",
+    "type": ["weapon", "simple" ,"melee", "greatclub"],
+    "dmg": {"die": "1d8", "type": "bludgeoning"},
+    "properties": ["two_handed"],
+    "mastery": "push",
+    "weight": 10,
+    "cost": "2 SP"
+  },
+  {
+    "name": "Handaxe",
+    "type": ["weapon", "simple" ,"melee", "handaxe"],
+    "dmg": {"die": "1d6", "type": "slashing"},
+    "properties": ["light", "thrown (20/60)"],
+    "mastery": "vex",
+    "weight": 2,
+    "cost": "1 SP"
+  },
+  {
+    "name": "Javelin",
+    "type": ["weapon", "simple" ,"melee", "javelin"],
+    "dmg": {"die": "1d6", "type": "piercing"},
+    "properties": ["thrown (30/120)"],
+    "mastery": "slow",
+    "weight": 2,
+    "cost": "1 SP"
+  },
+  {
+    "name": "Light Hammer",
+    "type": ["weapon", "simple" ,"melee", "light_hammer"],
+    "dmg": {"die": "1d4", "type": "bludgeoning"},
+    "properties": ["light", "thrown (20/60)"],
+    "mastery": "nick",
+    "weight": 2,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Mace",
+    "type": ["weapon", "simple" ,"melee", "mace"],
+    "dmg": {"die": "1d6", "type": "bludgeoning"},
+    "properties": [],
+    "mastery": "sap",
+    "weight": 4,
+    "cost": "5 GP"
+  },
+  {
+    "name": "Quarterstaff",
+    "type": ["weapon", "simple" ,"melee", "quarterstaff"],
+    "dmg": {"die": "1d6", "type": "bludgeoning"},
+    "properties": ["versatile (1d8)"],
+    "mastery": "topple",
+    "weight": 4,
+    "cost": "2 SP"
+  },
+  {
+    "name": "Sickle",
+    "type": ["weapon", "simple" ,"melee", "sickle"],
+    "dmg": {"die": "1d4", "type": "slashing"},
+    "properties": ["light"],
+    "mastery": "nick",
+    "weight": 2,
+    "cost": "1 GP"
+  },
+  {
+    "name": "Spear",
+    "type": ["weapon", "simple" ,"melee", "spear"],
+    "dmg": {"die": "1d6", "type": "piercing"},
+    "properties": ["thrown (20/60)", "versatile (1d8)"],
+    "mastery": "sap",
+    "weight": 3,
+    "cost": "1 GP"
+  },
+  {
+    "name": "Dart",
+    "type": ["weapon", "simple" ,"ranged", "dart"],
+    "dmg": {"die": "1d4", "type": "piercing"},
+    "properties": ["finesse", "thrown (20/60)"],
+    "mastery": "vex",
+    "weight": 0.25,
+    "cost": "5 CP"
+  },
+  {
+    "name": "Light Crossbow",
+    "type": ["weapon", "simple" ,"ranged", "light_crossbow"],
+    "dmg": {"die": "1d8", "type": "piercing"},
+    "properties": ["ammunition (80/320) (bolt)", "loading", "two_handed"],
+    "mastery": "slow",
+    "weight": 5,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Shortbow",
+    "type": ["weapon", "simple" ,"ranged", "shortbow"],
+    "dmg": {"die": "1d6", "type": "piercing"},
+    "properties": ["ammunition (80/320) (arrow)", "two_handed"],
+    "mastery": "vex",
+    "weight": 2,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Sling",
+    "type": ["weapon", "simple" ,"ranged", "sling"],
+    "dmg": {"die": "1d4", "type": "bludgeoning"},
+    "properties": ["ammunition (30/120) (bullet_sling)"],
+    "mastery": "slow",
+    "weight": 0,
+    "cost": "1 SP"
+  },
+  {
+    "name": "Battleaxe",
+    "type": ["weapon", "martial", "melee", "battleaxe"],
+    "dmg": {"die": "1d8", "type": "slashing"},
+    "properties": ["versatile (1d10)"],
+    "mastery": "topple",
+    "weight": 4,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Flail",
+    "type": ["weapon", "martial", "melee", "flail"],
+    "dmg": {"die": "1d8", "type": "bludgeoning"},
+    "properties": [],
+    "mastery": "sap",
+    "weight": 2,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Glaive",
+    "type": ["weapon", "martial", "melee", "glaive"],
+    "dmg": {"die": "1d10", "type": "slashing"},
+    "properties": ["heavy", "reach", "two_handed"],
+    "mastery": "graze",
+    "weight": 6,
+    "cost": "20 GP"
+  },
+  {
+    "name": "Greataxe",
+    "type": ["weapon", "martial", "melee", "greataxe"],
+    "dmg": {"die": "1d12", "type": "slashing"},
+    "properties": ["heavy", "two_handed"],
+    "mastery": "cleave",
+    "weight": 7,
+    "cost": "30 GP"
+  },
+  {
+    "name": "Greatsword",
+    "type": ["weapon", "martial", "melee", "greatsword"],
+    "dmg": {"die": "2d6", "type": "slashing"},
+    "properties": ["heavy", "two_handed"],
+    "mastery": "graze",
+    "weight": 6,
+    "cost": "50 GP"
+  },
+  {
+    "name": "Halberd",
+    "type": ["weapon", "martial", "melee", "halberd"],
+    "dmg": {"die": "1d10", "type": "slashing"},
+    "properties": ["heavy", "reach", "two_handed"],
+    "mastery": "cleave",
+    "weight": 6,
+    "cost": "20 GP"
+  },
+  {
+    "name": "Lance",
+    "type": ["weapon", "martial", "melee", "lance"],
+    "dmg": {"die": "1d10", "type": "piercing"},
+    "properties": ["heavy", "reach", "two_handed (unless mounted)"],
+    "mastery": "topple",
+    "weight": 6,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Longsword",
+    "type": ["weapon", "martial", "melee", "longsword"],
+    "dmg": {"die": "1d8", "type": "slashing"},
+    "properties": ["versatile (1d10)"],
+    "mastery": "sap",
+    "weight": 3,
+    "cost": "15 GP"
+  },
+  {
+    "name": "Maul",
+    "type": ["weapon", "martial", "melee", "maul"],
+    "dmg": {"die": "2d6", "type": "bludgeoning"},
+    "properties": ["heavy", "two_handed"],
+    "mastery": "topple",
+    "weight": 10,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Morningstar",
+    "type": ["weapon", "martial", "melee", "morningstar"],
+    "dmg": {"die": "1d8", "type": "bludgeoning"},
+    "properties": [],
+    "mastery": "sap",
+    "weight": 4,
+    "cost": "15 GP"
+  },
+  {
+    "name": "Pike",
+    "type": ["weapon", "martial", "melee", "pike"],
+    "dmg": {"die": "1d10", "type": "piercing"},
+    "properties": ["heavy", "reach", "two_handed"],
+    "mastery": "push",
+    "weight": 18,
+    "cost": "5 GP"
+  },
+  {
+    "name": "Rapier",
+    "type": ["weapon", "martial", "melee", "rapier"],
+    "dmg": {"die": "1d8", "type": "piercing"},
+    "properties": ["finesse"],
+    "mastery": "vex",
+    "weight": 2,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Scimitar",
+    "type": ["weapon", "martial", "melee", "scimitar"],
+    "dmg": {"die": "1d6", "type": "slashing"},
+    "properties": ["finesse", "light"],
+    "mastery": "nick",
+    "weight": 3,
+    "cost": "25 GP"
+  },
+  {
+    "name": "Shortsword",
+    "type": ["weapon", "martial", "melee", "shortsword"],
+    "dmg": {"die": "1d6", "type": "piercing"},
+    "properties": ["finesse", "light"],
+    "mastery": "vex",
+    "weight": 2,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Trident",
+    "type": ["weapon", "martial", "melee", "trident"],
+    "dmg": {"die": "1d8", "type": "piercing"},
+    "properties": ["thrown (20/60)", "versatile (1d10)"],
+    "mastery": "topple",
+    "weight": 4,
+    "cost": "5 GP"
+  },
+  {
+    "name": "Warhammer",
+    "type": ["weapon", "martial", "melee", "warhammer"],
+    "dmg": {"die": "1d8", "type": "bludgeoning"},
+    "properties": ["versatile (1d10)"],
+    "mastery": "push",
+    "weight": 5,
+    "cost": "15 GP"
+  },
+  {
+    "name": "War Pick",
+    "type": ["weapon", "martial", "melee", "war_pick"],
+    "dmg": {"die": "1d8", "type": "piercing"},
+    "properties": ["versatile (1d10)"],
+    "mastery": "sap",
+    "weight": 2,
+    "cost": "5 GP"
+  },
+  {
+    "name": "Whip",
+    "type": ["weapon", "martial", "melee", "whip"],
+    "dmg": {"die": "1d4", "type": "slashing"},
+    "properties": ["finesse", "reach"],
+    "mastery": "slow",
+    "weight": 3,
+    "cost": "2 GP"
+  },
+  {
+    "name": "Blowgun",
+    "type": ["weapon", "martial", "ranged", "blowgun"],
+    "dmg": {"die": "1d1", "type": "piercing"},
+    "properties": ["ammunition (25/100) (needle)", "loading"],
+    "mastery": "vex",
+    "weight": 1,
+    "cost": "10 GP"
+  },
+  {
+    "name": "Hand Crossbow",
+    "type": ["weapon", "martial", "ranged", "hand_crossbow"],
+    "dmg": {"die": "1d6", "type": "piercing"},
+    "properties": ["ammunition (30/120) (bolt)", "light", "loading"],
+    "mastery": "vex",
+    "weight": 3,
+    "cost": "75 GP"
+  },
+  {
+    "name": "Heavy Crossbow",
+    "type": ["weapon", "martial", "ranged", "heavy_crossbow"],
+    "dmg": {"die": "1d10", "type": "piercing"},
+    "properties": ["ammunition (100/400) (bolt)", "heavy", "loading", "two_handed"],
+    "mastery": "push",
+    "weight": 18,
+    "cost": "50 GP"
+  },
+  {
+    "name": "Longbow",
+    "type": ["weapon", "martial", "ranged", "longbow"],
+    "dmg": {"die": "1d8", "type": "piercing"},
+    "properties": ["ammunition (150/600) (arrow)", "heavy", "two_handed"],
+    "mastery": "slow",
+    "weight": 10,
+    "cost": "50 GP"
+  },
+  {
+    "name": "Musket",
+    "type": ["weapon", "martial", "ranged", "musket", "firearm"],
+    "dmg": {"die": "1d12", "type": "piercing"},
+    "properties": ["ammunition (40/120) (bullet_firearm)", "loading", "two_handed"],
+    "mastery": "slow",
+    "weight": 10,
+    "cost": "500 GP"
+  },
+  {
+    "name": "Pistol",
+    "type": ["weapon", "martial", "ranged", "pistol", "firearm"],
+    "dmg": {"die": "1d10", "type": "piercing"},
+    "properties": ["ammunition (30/90) (bullet_firearm)", "loading"],
+    "mastery": "vex",
+    "weight": 3,
+    "cost": "250 GP"
+  }
+]

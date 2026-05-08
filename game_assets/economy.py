@@ -4,7 +4,7 @@
 
 import random
 from .game_constants import CoinType, CreatureAttitude, Reputation, VendorType, WealthLevel, VendorMagicalItemOfferings
-from .game_constants import _MAGICAL_OFFERINGS_QTY_MAP_TABLE
+from .game_constants import _MAGICAL_OFFERINGS_QTY_TABLE
 
 class CoinPurse:
     def __init__(self):
@@ -107,8 +107,8 @@ class Vendor:
 
         """CHECK IF VENDOR HAS MAGICAL ITEMS FOR SALE"""
         if self.magical_offerings is not None:
-            magical_item_qty = random.randint(_MAGICAL_OFFERINGS_QTY_MAP_TABLE[self.magical_offerings][0],
-                                              _MAGICAL_OFFERINGS_QTY_MAP_TABLE[self.magical_offerings][1])
+            magical_item_qty = random.randint(_MAGICAL_OFFERINGS_QTY_TABLE[self.magical_offerings][0],
+                                              _MAGICAL_OFFERINGS_QTY_TABLE[self.magical_offerings][1])
 
         """FIGURE OUT HOW MANY ITEMS ARE IN STOCK"""
         for vendor_type in self.type:
